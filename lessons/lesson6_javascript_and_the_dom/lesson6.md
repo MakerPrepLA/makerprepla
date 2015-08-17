@@ -63,7 +63,7 @@ Type each of the following expression into the console one at a time and conside
 
 **What have we learned?** We can use the console as a simple caluculator by employing values with the data type of number and combining them with mathematical operators such as `+`, `-`, `*`, `/`, `%`.
 
-### Exercise
+### Exercise 1:
 
 From the console, calculate how many seconds old you are. Approximate by rounding to the nearest year or month.
 
@@ -127,7 +127,7 @@ In the same way that a `<style>` tag tells the browser to switch from the HTML i
 
 Always, always, always, always, always, always, always place your script tags **directly before the closing** `<body>` **tag** in your HTML document. Always. Always. If you follow this simple rule, you will save yourself several dozen frustrating hours of debugging over the course of your career. You're welcome.
 
-### Exercise: My First JavaScript Enabled Web Page
+### Exercise 2: My First JavaScript Enabled Web Page
 
 1.  Create a new HTML document, correctly set up with html, head, and body tags
 2.  Add a script tag **directly before the closing body tag**.
@@ -219,20 +219,20 @@ How do the results relate to the "pass by value" concept described earlier?
 
 Now try some on your own:
 
-#### Exercise:
+### Exercise 3:
 
 1.  Declare variables a, b and c. Assign a number to each.
 2.  Declare variable d and assign it the value of a, b, and c added together.
 3.  Re-assign the value of b to a. Then change the value of b. What is the value of a?
 
-#### Exercise:
+### Exercise 4:
 
 1.  Create variables "hour" and "minute" to reflect the current time.
 2.  Write an expression to calculate how many seconds until midnight.
 3.  Change "minute" to be accurate again as time has probably passed.
 4.  Run the same calculation again (press the up key in the console to scroll back to it).
 
-#### Exercise:
+### Exercise 5:
 
 1.  Declare at least 10 variables such as 'name', 'age', 'birthday', 'hometown', 'occupation', 'favoriteFood', 'bestFriend', etc, and set their values equal to strings containing the appropriate information about yourself.
 2.  console.log a paragraph about yourself using the appropriate variables to insert the relevant information in the appropriate places.
@@ -252,7 +252,7 @@ Open [this page](resources/dom_example.html) (you may need to copy and paste the
 *   `> document.querySelector('#nav ol li').textContent`
 *   `> document.querySelector('h1, p').textContent = "I'm on the page!"`
 
-#### Exercise
+### Exercise 6:
 
 1.  Open up one of your previous HTML projects
 2.  Use the console to retrieve the first element that matches a particular CSS selector.
@@ -262,7 +262,7 @@ Open [this page](resources/dom_example.html) (you may need to copy and paste the
 
 Having trouble understanding how each of the query selectors work? Use this [handy reference](../../resources/query_selector_reference.md) to help decipher them!
 
-### Exercise: Selector!
+### Exercise 7: Selector!
 
 *   `> document.querySelector('h1').textContent = "Behold! For I am a mighty web document!"`
 *   `> var big_shot = document.querySelector('#primary')`
@@ -274,7 +274,7 @@ Design an HTML page with HTML elements to match the selectors used above. With t
 
 Now move the JavaScript code into a script tag just before the `</body>`. **What's changed?**
 
-### Exercise: Greeter!
+### Exercise 8: Greeter!
 
 1.  Create a fresh HTML document with correctly set up html, head, and body tags
 2.  Create a `<div>` with an id of `greeting` on your web page.
@@ -282,10 +282,10 @@ Now move the JavaScript code into a script tag just before the `</body>`. **What
 4.  Create a variable called `welcome_message` and construct a welcoming message using their name.
 5.  Make your welcome message visible on the page using querySelector and textContent.
 6.  Prompt the user for their hometown and save their answer as a variable called `town`
-7.  Put an empty `<span>` with the id of `hometown` on the page in the middle of an existing sentence already on the page letting them know how nice it is to have a visitor from ___.
+7.  Put an empty `<span>` with the id of `hometown` on the page in the middle of an existing sentence already on the page letting them know how nice it is to have a visitor from ___ .
 8.  Use the `town` variable and the `#hometown` span to make the compliment complete!
 
-### Exercise: Shuffle!
+### Exercise 9: Shuffle!
 
 1.  Create a `<div>` with an id of `source`, and one with the id of `destination`, each with some text inside.
 2.  Fetch the textContent of `source` and save it as a variable.
@@ -293,7 +293,7 @@ Now move the JavaScript code into a script tag just before the `</body>`. **What
 4.  Create `<div>`s with a ids of `swap_1` and `swap_2`.
 5.  How can we swap the textContent of the two divs?
 
-### Exercise: Mad Libs!
+### Exercise 10: Mad Libs!
 
 1.  Create a "Mad Libs" web page. It should tell a story, leaving empty `<spans>`'s with id attributes of 'noun1', 'adjective2', 'verb3', etc. Practice using the console along with `querySelector` and `textContent` to fill in the missing information one at a time.
 2.  After doing this manually, put these operations into a script tag, and use variables to store each word to be filled in before placing it into the web page, so that the template will be filled out automatically each time the page loads, but the information will be easy to change later.

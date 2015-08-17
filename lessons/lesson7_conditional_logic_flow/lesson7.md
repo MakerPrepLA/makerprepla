@@ -26,7 +26,7 @@ What is the difference between 5 and "5"? Perhaps the `typeof` operator can help
 
 A piece of data of type `string` and another of type `number` will never truly be equivalent, no matter how similar they look to mushy, imprecise human brains.
 
-#### Exercise:
+### Exercise 1:
 
 1.  Use the console to write an expression which compares two strings and produces a true value.
 2.  Write an expression comparing two strings which produces a false value.
@@ -39,7 +39,7 @@ A piece of data of type `string` and another of type `number` will never truly b
 
 The `if` statement runs a series of lines of code (a **code block**) depending on whether a programmer-specified boolean condition evaluates to `true` or `false`. Since these are multi-line statements, they'll be hard to type into the console. Luckily, we can use a tool like [repl.it](http://repl.it/) which is much nicer than using the Chrome Console when working with large blocks of code. **Remember to save your work in Sublime when you're done with it!**
 
-### Exercise
+#### Exercise:
 
 Now try out some of the following in a new JavaScript document. **Don't copy and paste!**
 
@@ -63,9 +63,9 @@ if (2 === 5) {
 if ( prompt("How you doing?") === "good" ) {
   console.log("Well, I'm very glad to hear that...")
 }
-``` 
+```
 
-### Exercise
+### Exercise 2:
 
 1.  Write an if statement that always runs its code block
 2.  Write an if statement that never runs its code block
@@ -73,11 +73,11 @@ if ( prompt("How you doing?") === "good" ) {
 4.  Write a statement that alerts a warning if a visitor, when prompted, does not guess that the secret number is 3.
 5.  Prompt the visitor to enter a password when they visit your site. If it is correct, welcome them. Otherwise, direct them elsewhere using this line of code:
 
-`window.location = "http://www.google.com"` 
+`window.location = "http://www.google.com"`
 
 Why do you think that worked? Look it up [online](https://developer.mozilla.org/en-US/docs/Web/API/Window/location)!
 
-### Exercise
+#### Exercise
 
 1.  Type out each of the following examples. **No copy & paste.**
 2.  Some of the examples below will require additional HTML or JavaScript in order to work. Figure out whats needed and add it yourself! Try changing the values of things and activating different conditional branches.
@@ -151,7 +151,7 @@ What would happen if Bob was 35 or younger? How can we fix this?
 
 ## Logical And `&&` , Logical Or `||`, Ternary Operator
 
-### Exercise
+#### Exercise
 
 Type each of the following into the console. What do they each evaluate to?
 
@@ -207,10 +207,11 @@ As your logical formulations get more complex, it can be helpful to write out yo
       console.log("Oh, so nice of you to think of me, but my friend is in town and...")
     }
 
-**Exercise:** In a script tag, create variables `name`, `age`, `gender`, and `is_member`, `thirsty` and `drink_of_choice` and assign them appropriate values or no values at all. Then compose a paragraph in a div#greeting according to the following rules: (**Write it in pseudocode first, then JavaScript**)
+### Exercise 3:
+ In a script tag, create variables `name`, `age`, `gender`, `isMember`, and `isThirsty` and assign them appropriate values or no values at all. Then compose a paragraph in a div#greeting according to the following rules: (**Write it in pseudocode first, then JavaScript**)
 
 1.  If they are not a member or if they are under the age of 21, address them as sir or ma'am as appropriate and apologetically deny them access to the club.
-2.  Otherwise, greet them as Mr. or Mrs. (as appropriate by gender) and their name, and welcome them. If they are thirsty, prompt them as to what drink they would like.
+2.  Otherwise, greet them as Mr. or Mrs. (as appropriate by gender) and their name, and welcome them. If they are thirsty, prompt them as to what drink they would like and store it in a variable.
 3.  If their favorite drink is anything but "Coors Light", tell them "yes" (name) "one" (drink_name) "coming right up!". If they ask for a Coors, kick them out.
 
 ## More logic!

@@ -116,7 +116,7 @@ arr[3] = true
 arr[1] = "overwrite 45, just forget about that one, okay?"
 ```
 
-### Exercise:
+### Exercise 1:
 
 1.  Instantiate a new array and save it to a variable `recipe`
 2.  Use bracket notation to add the steps to create your favorite meal.
@@ -141,7 +141,7 @@ arr.unshift("More at the beginning!!");
 var firstItem = words.shift();
 ```
 
-### Exercise
+### Exercise 2:
 
 1.  Instantiate a new array and save it to a variable `bucket_list`
 2.  Use bracket notation with the assignment operator to add two life goals to your array.
@@ -164,6 +164,8 @@ while (i < words.length) {
   i++;
 }
 ```
+
+### Exercise 3:
 
 1.  Use a while loop to console log each item in your recipe and bucket list.
 2.  Refactor your code such that the while loop lives inside a function called `append_strings` that takes an array as an input (argument)
@@ -190,12 +192,12 @@ while (i < words.length) {
     // now our turn...
     var scrambled_poem = "roses red are bacon crispy i bacon love and is blue violets are"
 
-**Exercise:**
+### Exercise 4:
 
 1.  use `.split(' ')` on `scrambled_poem` and save the result as an array `scrambled_array`
 2.  Create a new array `unscrambled_array`
 3.  While the length of `scrambled_array` is greater than 0, remove the FIRST and LAST value and store add them to `unscrambled_array`.
-4.  Turn the values in `unscrambled_poem` into a string by using the array's native `.join(' ')` method.
+4.  Turn the values in `unscrambled_poem` into a string by using the array's native `.join()` method.
 
 <code-submission-form id="arrays-unscramble">
 
@@ -216,7 +218,7 @@ We do this type of iteration so often, that JavaScript provides us a special kin
       console.log(words[i])
     }
 
-**Exercise:**
+### Exercise 5:
 
 1.  Write a function `reverser` which will take an array of values as an input and return a new array of the same values in reverse order.
 2.  Inside `reverser` instantiate a new array `reversed_array`, use a `for` loop to populate it, then return it from the function.

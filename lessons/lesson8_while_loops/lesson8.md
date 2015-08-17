@@ -15,9 +15,9 @@ while (n < 10) {
 }
 
 console.log('fin!')
-``
+```
 
-### Exercise
+### Exercise 1:
 
 Write a while loop that counts from 0 to 50 by twos
 
@@ -57,7 +57,7 @@ document.querySelector('#lyrics').innerHTML = song
 
 **Hint:** If you're having trouble with this exercise, go through it step-by-step and figure out exactly what its doing. Think about what HTML elements you need in order to get it working!
 
-### Exercise: Fencepost Loop
+### Exercise 2: Fencepost Loop
 
 1.  Create a variable `n` and assign it an integer.
 2.  Code a while loop that builds as a single string, the numbers 1 through n, separated by commas
@@ -143,7 +143,7 @@ while ( i < n ) {
 
 ## The **Math** object (if you don't have time to make it throug this section, that's ok)
 
-The **Math** object holds properties and methods related to Mathematics (if you don't know what these are, that's ok, we'll be going over that in a later lesson). 
+The **Math** object holds properties and methods related to Mathematics (if you don't know what these are, that's ok, we'll be going over that in a later lesson).
 
 ### Exercise
 
