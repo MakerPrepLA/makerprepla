@@ -28,7 +28,7 @@ greeter();
 
 The above is a function that creates side effects when run. The function's side effect is a message logged in the console. Run each of the above lines of code one at a time. At what point does the greeting actually appear in the console?
 
-### Exercise
+### Exercise 1:
 
 1.  Define a function that console.logs a simple message and the time: `new Date()`
 2.  Invoke your function multiple times from the console.
@@ -79,7 +79,7 @@ var broken_saying_generator = function () {
 var broken_saying = broken_saying_generator();
 ```
 
-### Exercises:
+### Exercise 2:
 
 1.  In a script tag, define a new function called `get_sentence`
 2.  `get_sentence` should select a sentence randomly between two or more options and return it
@@ -112,7 +112,7 @@ inspector("hello", "how are you");
 inspector("hello", 7, true, undefined, null, 3 + 12, "nice to" + " meet you");
 ```
 
-#### Exercises:
+### Exercises 3:
 
 1.  Create a function `log_and_return` that console.logs all of its inputs and then returns them from the function invocation.
 2.  Store the return value as a variable `returned_values`
@@ -158,7 +158,7 @@ var add = function(num1, num2){
 var sum = add(7, 12);
 ```
 
-### Exercise: Simple Math
+### Exercise 4: Simple Math
 
 1.  Write a function called `tripler` that takes a number and returns triple the value.
 2.  Create a function `multiply` that takes two numbers as inputs and returns their product
@@ -169,7 +169,7 @@ var sum = add(7, 12);
 
 ## Looping Functions
 
-### Exercise
+### Exercise 5:
 
 Remember while loops?
 
@@ -177,7 +177,7 @@ Remember while loops?
 2.  Write a function called `count_by_n` that has parameters `count_by` and `count_up_to`, and console.log's the numbers up to `count_up_to` by intervals of `count_by`.
 
 
-### Exercise: FizzBuzz 2 - FizzBuzz Rises
+### Exercise 6: FizzBuzz 2 - FizzBuzz Rises
 
 **Rewrite the below from scratch if you can, try not to reference your previous fizzbuzz code.**
 
@@ -186,7 +186,7 @@ Remember while loops?
 4.  Allow the user to input a `count_up_to` argument
 5.  Allow the user to input `fizz_num` and `buzz_num` arguments to set the word substitutions to multiples of something other than 3 and 5
 
-### Exercise: Fibonacci
+### Exercise 7: Fibonacci
 
 By definition, the first two numbers in the Fibonacci sequence are 0 and 1, and each subsequent number is the sum of the previous two. For example, the first ten Fibonacci numbers are:
 
@@ -194,7 +194,7 @@ By definition, the first two numbers in the Fibonacci sequence are 0 and 1, and 
 
 Write a function that accepts a number and returns the number at that position in the fibonnaci sequence.
 
-## Extra Credit
+### Extra Credit
 
 Use the sum, multiple, divide, and remainder functions you wrote earlier to create a "calculator" function. This function should accept three parameters. The first two parameters are the numbers on which to perform an operation, and the third parameter should be a string which specifies which mathematical operation to perform on the two numbers.
 
