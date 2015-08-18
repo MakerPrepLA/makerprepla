@@ -40,11 +40,11 @@ person["job"] // "Plumber"
 
 ### Exercise 1:
 
-1.  Create a variable called `my_cat` and assign to it an empty object
-2.  Assign `my_cat` a `name` property, which should hold a string value
+1.  Create a variable called `myCat` and assign to it an empty object
+2.  Assign `myCat` a `name` property, which should hold a string value
 3.  Add an `age` property holding an integer value
 4.  Add an `alive` property holding a boolean value
-5.  Add at least four more properties such as `favorite_toy`, and `napping_spot`
+5.  Add at least four more properties such as `favoriteToy`, and `nappingSpot`
 
 Something to note- because property keys are always string values, quotation marks are optional:
 
@@ -85,8 +85,8 @@ human[property] = 'San Francisco'
 
 ### Exercise 2:
 
-1.  Create a variable called `my_dream_life` and assign to it an empty object
-2.  Create a variable called `property_key` and assign to it the string value `"job"`
+1.  Create a variable called `myDreamLife` and assign to it an empty object
+2.  Create a variable called `propertyKey` and assign to it the string value `"job"`
 3.  Use the `property_key` variable, not the literal string `"job"` to add a `job` property to your dream life object. Hint: `my_dream_life[property_key] = 'some job'`
 4.  Create a variable `another_property_key` and give it a value "salary".
 5.  Use `another_property_key`, not the literal string `"salary"`, to quantify the value of human life.
