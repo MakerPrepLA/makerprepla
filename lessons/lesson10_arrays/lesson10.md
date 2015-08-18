@@ -1,4 +1,4 @@
-# Lesson 10: Arrays
+ # Lesson 10: Arrays
 
 Strings are secretly collections of letters stored at sequential memory addresses.
 
@@ -121,8 +121,8 @@ arr[1] = "overwrite 45, just forget about that one, okay?"
 1.  Instantiate a new array and save it to a variable `recipe`
 2.  Use bracket notation to add the steps to create your favorite meal.
 3.  Access the first step of your recipe using bracket notation.
-4.  Create variable called `last_step` and assign to it a number which represents the index of the last item of your array
-5.  Access the last step of your recipe using the `last_step` variable
+4.  Create variable called `lastStep` and assign to it a number which represents the index of the last item of your array
+5.  Access the last step of your recipe using the `lastStep` variable
 
 
 ## Array properties and methods
@@ -143,13 +143,13 @@ var firstItem = words.shift();
 
 ### Exercise 2:
 
-1.  Instantiate a new array and save it to a variable `bucket_list`
+1.  Instantiate a new array and save it to a variable `bucketList`
 2.  Use bracket notation with the assignment operator to add two life goals to your array.
 3.  `.push()` two goals onto the end of your list.
 4.  `.unshift()` two goals onto the beginning.
 5.  What is the array's length at this point?
-6.  `.pop()` off one goal and save it to a variable `dying_wish`
-7.  `.shift()` off one goal and save it to a variable `do_it_now`
+6.  `.pop()` off one goal and save it to a variable `dyingWish`
+7.  `.shift()` off one goal and save it to a variable `doItNow`
 8.  What is the array's length at this point?
 
 
@@ -168,9 +168,9 @@ while (i < words.length) {
 ### Exercise 3:
 
 1.  Use a while loop to console log each item in your recipe and bucket list.
-2.  Refactor your code such that the while loop lives inside a function called `append_strings` that takes an array as an input (argument)
-3.  Invoke `append_strings` twice, passing in `recipe` the first time and `bucket_list` the second time
-4.  Refactor `append_strings` such that it takes two arguments: an array of strings, and a string representing the CSS selector of the element into which the strings should be appended. (i.e. `bucket_list` may be appended into a `#bucket_output` div)
+2.  Refactor your code such that the while loop lives inside a function called `appendStrings` that takes an array as an input (argument)
+3.  Invoke `appendStrings` twice, passing in `recipe` the first time and `bucketList` the second time
+4.  Refactor `appendStrings` such that it takes two arguments: an array of strings, and a string representing the CSS selector of the element into which the strings should be appended. (i.e. `bucketList` may be appended into a `#bucket_output` div)
 
 <code-submission-form id="arrays-append_strings">
 
@@ -190,14 +190,14 @@ while (i < words.length) {
     var new_str = arr.join(' and a ')
 
     // now our turn...
-    var scrambled_poem = "roses red are bacon crispy i bacon love and is blue violets are"
+    var scrambledPoem = "roses red are bacon crispy i bacon love and is blue violets are"
 
 ### Exercise 4:
 
-1.  use `.split(' ')` on `scrambled_poem` and save the result as an array `scrambled_array`
-2.  Create a new array `unscrambled_array`
-3.  While the length of `scrambled_array` is greater than 0, remove the FIRST and LAST value and store add them to `unscrambled_array`.
-4.  Turn the values in `unscrambled_poem` into a string by using the array's native `.join()` method.
+1.  use `.split(' ')` on `scrambledPoem` and save the result as an array `scrambledArray`
+2.  Create a new array `unscrambledArray`
+3.  While the length of `scrambledArray` is greater than 0, remove the FIRST and LAST value and store add them to `unscrambledArray`.
+4.  Turn the values in `unscrambledPoem` into a string by using the array's native `.join()` method.
 
 <code-submission-form id="arrays-unscramble">
 
@@ -221,7 +221,7 @@ We do this type of iteration so often, that JavaScript provides us a special kin
 ### Exercise 5:
 
 1.  Write a function `reverser` which will take an array of values as an input and return a new array of the same values in reverse order.
-2.  Inside `reverser` instantiate a new array `reversed_array`, use a `for` loop to populate it, then return it from the function.
+2.  Inside `reverser` instantiate a new array `reversedArray`, use a `for` loop to populate it, then return it from the function.
 
 <code-submission-form id="arrays-reverser">
 
@@ -238,15 +238,15 @@ We do this type of iteration so often, that JavaScript provides us a special kin
 
 Often it's cleaner to use Array's native `.forEach()` method to run a given function once for each item in the array, passing that item in as an argument
 
-    var log_me = function(word){
+    var logMe = function(word){
       console.log(word)
     }
 
-    words.forEach(log_me)
+    words.forEach(logMe)
 
-**Exercise:** Refactor your `append_strings` function to use `.forEach()` instead of a `while` loop.
+**Exercise:** Refactor your `appendStrings` function to use `.forEach()` instead of a `while` loop.
 
-**Exercise:** Write a function `biggest_smallest` that takes an array of numbers as an input, uses `.forEach()`, and returns an array containing the smallest number in the zeroth position and the largest number in the first position.
+**Exercise:** Write a function `biggestSmallest` that takes an array of numbers as an input, uses `.forEach()`, and returns an array containing the smallest number in the zeroth position and the largest number in the first position.
 
 <code-submission-form id="arrays-biggest_smallest">
 
@@ -269,9 +269,9 @@ Arrays are pass by reference, this means when you do the following, you get two 
     var arr3 = arr.slice() // clones the array
     arr3.pop() // only arr3 is changed
 
-**Exericise:** Create a function array_duplicator, that takes an array as an input, and returns a copy as the output.
+**Exericise:** Create a function arrayDuplicator, that takes an array as an input, and returns a copy as the output.
 
-    var array_duplicator = function(inputArray) {
+    var arrayDuplicator = function(inputArray) {
         var outputArray = []
 
         // code here
@@ -280,7 +280,7 @@ Arrays are pass by reference, this means when you do the following, you get two 
     };
 
     var original = [1, 2, 3, 4]
-    var duplicated = array_duplicator(original)
+    var duplicated = arrayDuplicator(original)
 
     duplicated.pop()
     duplicated.pop()
@@ -311,12 +311,12 @@ Arrays are pass by reference, this means when you do the following, you get two 
     console.log(frenemies)
     console.log(friends, enemies) // does not change original arrays!
 
-**Exericise:** Write a function `array_combiner` that takes two arrays as inputs and returns the two of them smooshed together as an output
+**Exericise:** Write a function `arrayCombiner` that takes two arrays as inputs and returns the two of them smooshed together as an output
 
-    var array_combiner = function(array1, array2) {}
+    var arrayCombiner = function(array1, array2) {}
 
-    var combined_array = array_combiner([1, 2, 3], [4, 5, 6])
-    console.log(combined_array)
+    var combinedArray = arrayCombiner([1, 2, 3], [4, 5, 6])
+    console.log(combinedArray)
 
 <code-submission-form id="arrays-concat">
 
@@ -334,28 +334,28 @@ Arrays are pass by reference, this means when you do the following, you get two 
 `.splice()` is another confusing one. It destructively removes a number of elements from an array starting at a particular index.
 
     var frenemies = ['ada', 'will', 'bianca', 'abe', 'john', 'alice']
-    var starting_at_index = 3
-    var number_to_remove = 2
+    var startingAtIndex = 3
+    var numberToRemove = 2
 
-    var removed_elements = frenemies.splice(starting_at_index, number_to_remove);
+    var removedElements = frenemies.splice(startingAtIndex, numberToRemove);
 
-    console.log("We took out ", removed_elements)
+    console.log("We took out ", removedElements)
     console.log("The remaining array ", frenemies)
 
-**Exercise:** Write a function `array_plucker` that takes an array and an index as inputs and destructively removes the single value at that index. Return that value.
+**Exercise:** Write a function `arrayPlucker` that takes an array and an index as inputs and destructively removes the single value at that index. Return that value.
 
-    var array_plucker = function(array1, index_to_remove) {
-        var removed_value
+    var arrayPlucker = function(array1, indexToRemove) {
+        var removedValue
         // code here
-        return removed_value
+        return removedValue
     }
 
-    var days_of_school = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+    var daysOfSchool = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
 
-    var day_off = array_plucker(days_of_school, 4)
+    var dayOff = arrayPlucker(daysOfSchool, 4)
 
-    console.log("I'll go to school on: ", days_of_school)
-    console.log("but I'm taking vaction on ", day_off)
+    console.log("I'll go to school on: ", daysOfSchool)
+    console.log("but I'm taking vacation on ", dayOff)
 
 <code-submission-form id="arrays-splice">
 
@@ -401,10 +401,10 @@ Arrays are pass by reference, this means when you do the following, you get two 
 1.  Write a function that takes an array of values and returns an boolean representing if the word "hello" exists in the array.
 2.  Write a function that takes an array of values and a target value and returns how many times that target value exists in the array.
 3.  Write a function that takes an array and returns a new array containing only the values at odd indexes in that array.
-4.  Write a function called `sum_array` that takes an array of numbers and returns the sum of all of those numbers added together.
-5.  Write a function called `array_math` that takes an array of numbers and a string with a mathmatical operator and applies that operator to all the numbers together. `array_math([4,2,3], "*")` should return `24`
+4.  Write a function called `sumArray` that takes an array of numbers and returns the sum of all of those numbers added together.
+5.  Write a function called `arrayMath` that takes an array of numbers and a string with a mathmatical operator and applies that operator to all the numbers together. `arrayMath([4,2,3], "*")` should return `24`
 6.  Write a `zipper` function that combines two arrays in alternating order, `zipper([1,2,3],['a','b','c'])` should return `[1, 'a', 2, 'b', 3, 'c']`. Make sure to handle cases where one array is longer than the other.
-7.  Write a function that merges two sorted lists into a new list. `merge_sorted([1, 2, 5, 9], [3, 7, 19])` should return `[1, 2, 3, 5, 7, 9, 19]`
+7.  Write a function that merges two sorted lists into a new list. `mergeSorted([1, 2, 5, 9], [3, 7, 19])` should return `[1, 2, 3, 5, 7, 9, 19]`
 8.  Write a function that creates an array of the first 100 Fibonacci numbers.
 
 <code-submission-form id="arrays-more_arrays">
@@ -473,27 +473,27 @@ Arrays are pass by reference, this means when you do the following, you get two 
 
 * * *
 
-    var array_of_functions = [ function(){ console.log('hi') }, function(){ console.log('bye') } ]
+    var arrayOfFunctions = [ function(){ console.log('hi') }, function(){ console.log('bye') } ]
 
-    array_of_functions.push(function(val1){ console.log(val1 * 2) })
+    arrayOfFunctions.push(function(val1){ console.log(val1 * 2) })
 
     var adder = function(val1, val2){ console.log(val1 + val2) }
-    array_of_functions[3] = adder
+    arrayOfFunctions[3] = adder
 
-    array_of_functions.forEach(function(func){
+    arrayOfFunctions.forEach(function(func){
       func(3,4)
     })
 
 * * *
 
     // Reimplementing JavaScript Array's native .forEach() method is rather trivial
-    var my_each = function (array, iterator) {
+    var myEach = function (array, iterator) {
       for (var i = 0; i < array.length; i++){
         iterator( array[i], i )
       }
     }
 
-    my_each(some_array, some_function)
+    myEach(someArray, someFunction)
 
 </section>
 

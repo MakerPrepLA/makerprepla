@@ -87,16 +87,16 @@ human[property] = 'San Francisco'
 
 1.  Create a variable called `myDreamLife` and assign to it an empty object
 2.  Create a variable called `propertyKey` and assign to it the string value `"job"`
-3.  Use the `property_key` variable, not the literal string `"job"` to add a `job` property to your dream life object. Hint: `my_dream_life[property_key] = 'some job'`
-4.  Create a variable `another_property_key` and give it a value "salary".
-5.  Use `another_property_key`, not the literal string `"salary"`, to quantify the value of human life.
-6.  What does `my_dream_life[property_key]` return?
-7.  What does `my_dream_life["job"]` return?
-8.  Assign a string `"car"` to the variable `next_property`
-9.  Use the variable `next_property` to add your dream car to your dream life object.
-10.  What does `my_dream_life[next_property]` return?
-11.  What does `my_dream_life["car"]` return?
-12.  Assign `my_dream_life` three more properties (with values) using variables rather than literal strings and access them each using variables as well
+3.  Use the `propertyKey` variable, not the literal string `"job"` to add a `job` property to your dream life object. Hint: `myDreamLife[propertyKey] = 'some job'`
+4.  Create a variable `anotherPropertyKey` and give it a value "salary".
+5.  Use `anotherPropertyKey`, not the literal string `"salary"`, to quantify the value of human life.
+6.  What does `myDreamLife[propertyKey]` return?
+7.  What does `myDreamLife["job"]` return?
+8.  Assign a string `"car"` to the variable `nextProperty`
+9.  Use the variable `nextProperty` to add your dream car to your dream life object.
+10.  What does `myDreamLife[nextProperty]` return?
+11.  What does `myDreamLife["car"]` return?
+12.  Assign `myDreamLife` three more properties (with values) using variables rather than literal strings and access them each using variables as well.
 
 ## Dot Notation
 
@@ -122,8 +122,8 @@ var prop = 'year'
 ### Exercise 3:
 
 1.  Which should we use above: `car[prop] = 1992` or `car.prop = 1992`? Try both ways!
-2.  What happens when you ask for a property that is not registered to the object? i.e. to what value does the expression `car['nothing_here']` resolve to? what about `car.nothing_here`?
-3.  Create your own `dream_car` object.
+2.  What happens when you ask for a property that is not registered to the object? i.e. to what value does the expression `car['nothingHere']` resolve to? what about `car.nothingHere`?
+3.  Create your own `dreamCar` object.
 4.  **Use dot notation** to add properties `make`, `model`, and `color` with values of type string, `year` with a value of type number, and `registered` with a value of type boolean.
 
 #### Exercise:
@@ -175,10 +175,10 @@ for (var key in obj) {
 
 ### Exercise 4:
 
-1.  Use a `for in` loop to iterate over your `cat`, `dream_car` and `dream_life` objects. Re-write the loop from scratch each time and use a variable name other than `key` for each one.
+1.  Use a `for in` loop to iterate over your `cat`, `dreamCar` and `dreamLife` objects. Re-write the loop from scratch each time and use a variable name other than `key` for each one.
 2.  Use a `for in` loop to search `obj` for the key `color` and print its value to the console.
-3.  Search `obj` for the value `"down"`, and append its key into the div.
-4.  Create a variable `target_key` and assign it a string `"greeting"`. Use the `target_key` variable and `for in` to find the `greeting` property and log its value.
+3.  Search `obj` for the value `"down"`, and append its key to a div.
+4.  Create a variable `targetKey` and assign it a string `"greeting"`. Use the `targetKey` variable and `for in` to find the `greeting` property and log its value.
 
 ## String Operations
 
@@ -193,7 +193,7 @@ greeting[0] // "H"
 var words = greeting.split(' ')
 ```
 
-#### Exercise 5:
+### Exercise 5:
 
 1.  Loop through the politicos object and concatenate everyones names together, separated by a space. Final result should look something like this: 'hillary clinton barack obama michelle obama joe biden jerry brown'
 2.  Loop through the politicos object and count the number of people whose name contains the word "obama".
@@ -208,7 +208,7 @@ var politicos = {
 }
 ```
 
-#### Exercise 6:
+### Exercise 6:
 
 1.  Create a new empty object `b_named_politicos`
 2.  Console.log any politico whose first OR last name starts with a 'b' as a property of the `b_named_politicos` object with their job title as the key and their name as the value
@@ -250,7 +250,7 @@ complex_object.simple_object.name
 complex_object.fn("stuff", "more stuff", "even more stuff!")
 ```
 
-#### Exercise 7:
+### Exercise 7:
 
 1. Try console logging all of the values in `complex_object`
 2. `simple_object` is an object inside of an object. How might we access its properties? Try to console log the value of the "name" property inside of simple_object (which is nested inside of complex_object)

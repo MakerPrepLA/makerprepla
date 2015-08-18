@@ -94,21 +94,22 @@ var broken_saying = broken_saying_generator();
 During every function invocation, you have access to the arguments keyword, which contains all the inputs to the function invocation. Play with this concept until **you're sure** you understand it. Ask for help if you need it.
 
 ```javascript
+//this function lets you "inspect" the arguments keyword
 var inspector = function () {
-  console.log(arguments)
-}
+  console.log(arguments);
+};
 
 // try each invocation individually and ponder the result
-inspector(3)
+inspector(3);
 
-inspector(3 + 7)
-inspector(3, 7)
+inspector(3 + 7);
+inspector(3, 7);
 
-inspector("hello")
-inspector("hello" + " " + "how are you")
-inspector("hello", "how are you")
+inspector("hello");
+inspector("hello" + " " + "how are you");
+inspector("hello", "how are you");
 
-inspector("hello", 7, true, undefined, null, 3 + 12, "nice to" + " meet you")
+inspector("hello", 7, true, undefined, null, 3 + 12, "nice to" + " meet you");
 ```
 
 #### Exercises:
@@ -117,143 +118,75 @@ inspector("hello", 7, true, undefined, null, 3 + 12, "nice to" + " meet you")
 2.  Store the return value as a variable `returned_values`
 3.  Pass that variable as an argument to a second invocation of `log_and_return`
 
-<code-submission-form id="functions-log_and_return">
-
-<form class="student_code">
-
-#### Submit Your Code
-
-<textarea name="code" id="code_sample" rows="10"></textarea>  
-<input type="submit" value="Send"></form>
-
-</code-submission-form>
-
-* * *
-
 It's unwieldy to work with the `arguments` keyword directly. Usually we use named **parameters** to give our inputs (arguments) variable names for the length of the function invocation
 
-    var value_logger = function (value) {
-      console.log(value)
-    }
+```javascript
+var value_logger = function (value) {
+  console.log(value);
+};
 
-    value_logger("Howdy ho, neighborino!")
+value_logger("Howdy ho, neighborino!");
 
-    // parameters and variables defined in function invocations are local to that invocation
-    value     // ReferenceError: No variable 'value' exists
+// parameters and variables defined in function invocations are local to that invocation
+value;     // ReferenceError: No variable 'value' exists
 
-    value_logger(3 + 7)
+value_logger(3 + 7);
 
-    // where's the seven?
-    value_logger(3, 7)
+// where's the seven?
+value_logger(3, 7);
 
-    var doubler = function (num) {
-      return num * 2
-    }
+var doubler = function (num) {
+  return num * 2;
+};
 
-    // is it ten?
-    var should_be_ten = doubler(5)
+// is it ten?
+var should_be_ten = doubler(5);
 
-    var double_value_logger = function (value1, value2) {
-      console.log(value1, value2)
-    }
+var double_value_logger = function (value1, value2) {
+  console.log(value1, value2);
+};
 
-    double_value_logger("hello", "how are you")
+double_value_logger("hello", "how are you");
 
-    // what is value2?
-    double_value_logger("hello")
+// what is value2?
+double_value_logger("hello");
 
-    var add = function(num1, num2){
-      return num1 + num2
-    }
+var add = function(num1, num2){
+  return num1 + num2;
+};
 
-    var sum = add(7, 12)
+var sum = add(7, 12);
+```
 
-**Exercises:** Simple Math
+### Exercise: Simple Math
 
 1.  Write a function called `tripler` that takes a number and returns triple the value.
 2.  Create a function `multiply` that takes two numbers as inputs and returns their product
 3.  Create a function `divide` that takes two numbers as inputs and returns the result of dividing the first by the second
-4.  Create a function `remainder` that takes two numbers as inputs and returns the result of modulo the first by the second
+4.  Create a function `remainder` that takes two numbers as inputs and returns the result of modulo(`%`) the first by the second
 5.  Using only the functions you wrote above, and no operators, calculate the value of tripling 5, multiplying that by 12, dividing by 2 and then finding the remainder of dividing that by 3.
 6.  Write 4 more lines of code that use all of your math functions in a single expression
 
-<code-submission-form id="functions-simple_math">
+## Looping Functions
 
-<form class="student_code">
+### Exercise
 
-#### Submit Your Code
-
-<textarea name="code" id="code_sample" rows="10"></textarea>  
-<input type="submit" value="Send"></form>
-
-</code-submission-form>
-
-* * *
-
-**Exercise:** Constructing sentences
-
-1.  Write a function called `string_printer`, that takes a string as an argument and uses `$('#output').text()` to place it into a specific <div> on the web page. Call it multiple times with different strings from the console.
-2.  Does `string_printer` use a _side effect_ or a _return value_?
-3.  Write a function called `funny_sentence` that takes a noun, an adjective, a verb, and an adverb as inputs, and constructs a string of html text and uses `$('#output').append()` to place it on the page.
-4.  Put each word argument you pass in into spans that have css rules that styles them differently to make them stand out.
-5.  Invoke `funny_sentence` 5 times from within a <script> tag and see the result on the page.
-6.  **Extra Credit:** Create a version of `funny_sentence` that takes no inputs, but rather constructs a funny sentence on its own from randomly chosen words
-
-<code-submission-form id="functions-constructing_sentences">
-
-<form class="student_code">
-
-#### Submit Your Code
-
-<textarea name="code" id="code_sample" rows="10"></textarea>  
-<input type="submit" value="Send"></form>
-
-</code-submission-form>
-
-* * *
-
-**Exercise:** Remember while loops?
+Remember while loops?
 
 1.  Write a function called `factoral_of_n` that takes a number and returns the [factoral](//en.wikipedia.org/wiki/Factorial) i.e. `factoral_of_n(5)` should return 120 (5x4x3x2x1).
 2.  Write a function called `count_by_n` that has parameters `count_by` and `count_up_to`, and console.log's the numbers up to `count_up_to` by intervals of `count_by`.
 
-<code-submission-form id="functions-looping">
 
-<form class="student_code">
+### Exercise: FizzBuzz 2 - FizzBuzz Rises
 
-#### Submit Your Code
-
-<textarea name="code" id="code_sample" rows="10"></textarea>  
-<input type="submit" value="Send"></form>
-
-</code-submission-form>
-
-* * *
-
-<warn>Rewrite the below from scratch if you can, try not to reference your previous fizzbuzz code.</warn>
-
-**Exercise:** FizzBuzz 2: FizzBuzz's revenge
+**Rewrite the below from scratch if you can, try not to reference your previous fizzbuzz code.**
 
 1.  Write a function `this_that` that takes in two strings and reimplements fizzBuzz using those two words instead of 'fizz' and 'buzz' (prints the numbers from 1 to 100\. But for multiples of three print word1 instead of the number and for the multiples of five print word2\. For numbers which are multiples of both three and five print word1word2.)
 2.  In the first iteration, have `this_that` return a long string of the counting seperated by commas
-3.  Now refactor such that `this_that` uses `$('#output').append()` each time to add new divs to the page
 4.  Allow the user to input a `count_up_to` argument
 5.  Allow the user to input `fizz_num` and `buzz_num` arguments to set the word substitutions to multiples of something other than 3 and 5
 
-<code-submission-form id="functions-fizzbuzz">
-
-<form class="student_code">
-
-#### Submit Your Code
-
-<textarea name="code" id="code_sample" rows="10"></textarea>  
-<input type="submit" value="Send"></form>
-
-</code-submission-form>
-
-* * *
-
-**Exercise:** Fibonacci
+### Exercise: Fibonacci
 
 By definition, the first two numbers in the Fibonacci sequence are 0 and 1, and each subsequent number is the sum of the previous two. For example, the first ten Fibonacci numbers are:
 
@@ -261,15 +194,12 @@ By definition, the first two numbers in the Fibonacci sequence are 0 and 1, and 
 
 Write a function that accepts a number and returns the number at that position in the fibonnaci sequence.
 
-<code-submission-form id="functions-fibonacci">
+## Extra Credit
 
-<form class="student_code">
+Use the sum, multiple, divide, and remainder functions you wrote earlier to create a "calculator" function. This function should accept three parameters. The first two parameters are the numbers on which to perform an operation, and the third parameter should be a string which specifies which mathematical operation to perform on the two numbers.
 
-#### Submit Your Code
+### Nightmare Mode
 
-<textarea name="code" id="code_sample" rows="10"></textarea>  
-<input type="submit" value="Send"></form>
+Learn about [generators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators) and create a generator that yields the next fibonacci number each time its called, and can be reset by passing it a value of `true`.
 
-</code-submission-form></section>
-
-</div>
+**Hint:** The problem is solved for you in the documentation link above, but you need to implement it on your own **AND** understand it. Once you think you've got it, reimplement FizzBuzz as a generator.
