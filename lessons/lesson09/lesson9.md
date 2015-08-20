@@ -1,4 +1,4 @@
-# Lesson 11: Functions
+# Lesson 9: Functions
 
 A function is an object containing a [subroutine](https://en.wikipedia.org/wiki/Subroutine) that defines a sequence of lines of code, packaged as a unit. When defined and saved as a variable, we can reference it by that variable name, and use the invocation operator `()` to run it 0, 1, or many times.
 

@@ -141,7 +141,7 @@ while ( i < n ) {
 "welcome 4, meet 1, 2 and 3"
 "welcome 5, meet 1, 2, 3 and 4"
 
-## The **Math** object (if you don't have time to make it throug this section, that's ok)
+## The **Math** object (if you don't have time to make it through this section, that's ok)
 
 The **Math** object holds properties and methods related to Mathematics (if you don't know what these are, that's ok, we'll be going over that in a later lesson).
 
@@ -212,7 +212,7 @@ Write code to play rock, paper, scissors with the user.
 
 ## Turn in your work!
 
-Please submit a gistcontaining the most challenging or fulfilling piece of code you've written thus far.
+Please submit a gist containing the most challenging or fulfilling piece of code you've written thus far.
 
 It can be a specific exercise you've completed, semi-related to the concepts we've covered, or code you've written on your own, not at all related to what we've done in class.
 

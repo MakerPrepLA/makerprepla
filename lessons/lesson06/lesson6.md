@@ -14,29 +14,29 @@ We've learned how the browser retrieves an HTML document, either from the hard d
 
 We can view the page, scroll around, click on a link to change pages, or submit a form. But other than that, once the page is rendered to the screen, it is functionally inert.
 
-If we want more complex interactive behavior we need to use a [scripting language](https://en.wikipedia.org/wiki/Scripting_language) like JavaScript to describe what should happen when and how.
+If we want more complex interactive behavior we need to use a [scripting language](https://en.wikipedia.org/wiki/Scripting_language) like JavaScript to describe what should happen, when, and how.
 
 Before we start throwing down `<script>` tags or creating our own `.js` files, let's write a few lines by hand. Go ahead and open up your Chrome Developer Tools and switch to the **JavaScript Console.** The JavaScipt Console is a [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop): Read Evaluate Print Loop.
 
 ![Javascript Console](resources/console.png)
 
-A REPL waits for the user to input an instruction and press ENTER to signal they're done. The interpreter then READs the command, EVALUATEs (runs/ executes/ resolves) it, PRINTs the result, and LOOPs back to wait for another command..
+A REPL waits for the user to input an instruction, and then press ENTER to signal they're done. The interpreter then READs the command, EVALUATEs (runs/ executes/ resolves) it, PRINTs the result, and LOOPs back to wait for another command..
 
 
 ### The JavaScript Runtime Environment
 
 First off let's prove to ourselves that we are still living in the same world. Use the JavaScript console to instruct the browser to show you the DOM. (The `>` indicates that we are typing into a JavaScript REPL, not writing code in a file to be run later, omit it)
 
-*   `> window.document`
+*   `> window.document;`
 
 Open it up and take a look! The `window` object holds the state of (information about) the currently open browser tab. It contains many **properties** (simply put: associated pieces of data), of which, the DOM (document) is one. Here are a few more, **check 'em out**
 
-*   `> window.location`
-*   `> window.history`
+*   `> window.location;`
+*   `> window.history;`
 
 You can also look at the window object directly, but be warned, **it's intense!**
 
-*   `> window`
+*   `> window;`
 
 Any of the properties listed can be accessed using the **dot notation** property access format as seen above with the document, location, and history properties of the window object (we'll learn more about objects later). **Try accessing a few.**
 
@@ -54,12 +54,12 @@ Each of the following lines of code is an expression. An expression is a series 
 
 Type each of the following expression into the console one at a time and consider the result.
 
-*   `> 2 + 3`
-*   `> 3 * 5 + 4`
-*   `> 3 * (5 + 4)`
-*   `> -300 * 2.57`
-*   `> 25%6` <-- The modulo operation returns the remainder after divison
-*   `> 1e4 * 2`
+*   `> 2 + 3;`
+*   `> 3 * 5 + 4;`
+*   `> 3 * (5 + 4);`
+*   `> -300 * 2.57;`
+*   `> 25%6;` <-- The modulo operation returns the remainder after divison
+*   `> 1e4 * 2;`
 
 **What have we learned?** We can use the console as a simple caluculator by employing values with the data type of number and combining them with mathematical operators such as `+`, `-`, `*`, `/`, `%`.
 
@@ -89,18 +89,18 @@ String concatenation is the operation of joining character strings end-to-end.
 
 Not only does the `window` object give us access to the current browser tab's state, we can also use it to issue commands to the browser. **What does this command do? Try it.**
 
-*   `> window.alert("Jello, whirled")`
+*   `> window.alert("Jello, whirled");`
 
 Similar to the Terminal, the first part of the command references what we're looking to run. Next comes the invokation operator `()` - similar to a mathematical operator ( +, -, * ) - which causes the JavaScript interpreter to actually run the function (we'll learn more about these later). Inside the parentheses we place the arguments we wish to pass as input; in this case the string to be displayed.
 
 The expression `2 + 3` resolves to the **value** 5. What value does the following expression resolve to? What is its **data type**? Because the JavaScript console is a REPL, you can find out by simply executing the command; the console will print out what the command evaluates to right after you execute it.
 
-*   `> window.prompt("How are you feeling today?")`
+*   `> window.prompt("How are you feeling today?");`
 
 `window.prompt` and `window.alert` are used so frequently that shortcuts were created. The "window" portion can be omitted, and the functions will still work.
 
-*   `> alert("Jello, whirled")`
-*   `> prompt("How are you feeling today?")`
+*   `> alert("Jello, whirled");`
+*   `> prompt("How are you feeling today?");`
 
 ### `<script>` tags
 
@@ -119,8 +119,8 @@ In the same way that a `<style>` tag tells the browser to switch from the HTML i
           // the interpreter will skip any line that starts with a double slash
           // these lines are explanatory comments to help squishy-brained humans
 
-          alert("Welcome to mah deng website, brah!")
-          prompt("How's it going?")
+          alert("Welcome to mah deng website, brah!");
+          prompt("How's it going?");
         </script>
       </body>
     </html>
@@ -142,7 +142,7 @@ Ok, though illustrative, alerts are annoying. That's why they're not often used.
 
 ```html
 <script>
-  window.console.log("Where is this message displayed?")
+  window.console.log("Where is this message displayed?");
 </script>
 ```
 
@@ -150,7 +150,7 @@ Or, more succinctly:
 
 ```html
 <script>
-  console.log("This is mostly used for debugging.", "We'll learn how to write directly into the HTML document a little later.")
+  console.log("This is mostly used for debugging.", "We'll learn how to write directly into the HTML document a little later.");
 </script>
 ```
 
@@ -158,31 +158,23 @@ Or, more succinctly:
 
 Ask the user what their favorite sports team is. Secretly log a message trash-talking their team in the console.
 
-#### Exercise
-
-1.  Go back through your past projects and add a `<script>` tag at the bottom of each page, right before the `</body>`.
-2.  Add some secret console.log goodness to each.
-3.  Add more JavaScript as you see fit.
-
-* * *
-
 ### Variables
 
 In programming, it can be extremely useful to store values for later use. Variables are identifiers (labels, nametags) used to set and retrieve stored values. They are called variables because you can change what value they hold based on user input, the current program state, etc.
 
 We use the `var` keyword to declare a variable. When first declared, variables have a value of `undefined`. The assignment `=` stores a value. **Type along in your console:**
 
-*   `> var x`
-*   `> x`
-*   `> x = 1`
-*   `> x + 4`
-*   `> x`
-*   `> x = 5`
-*   `> var y = 2`
-*   `> x + y + 7`
-*   `> y = x + 7`
+*   `> var x;`
+*   `> x;`
+*   `> x = 1;`
+*   `> x + 4;`
+*   `> x;`
+*   `> x = 5;`
+*   `> var y = 2;`
+*   `> x + y + 7;`
+*   `> y = x + 7;`
 
-So when we write `var rate = 100` your JavaScript Runtime Environment jots down the variable "rate" in its ledger and gives it a pointer to a memory location:
+So when we write `var rate = 100;` your JavaScript Runtime Environment jots down the variable "rate" in its ledger and gives it a pointer to a memory location:
 
 ![variable](resources/var_memory.png)
 
@@ -190,26 +182,26 @@ So when we write `var rate = 100` your JavaScript Runtime Environment jots down 
 
 Type the following in your console one line at a time (ignore the comments):
 
-*   `> my_variable` // what does this error mean?
-*   `> var my_variable`
-*   `> my_variable` // what has changed from the first line?
-*   `> my_variable = "I'm a string value!"`
-*   `> typeof my_variable`
+*   `> my_variable;` // what does this error mean?
+*   `> var my_variable;`
+*   `> my_variable;` // what has changed from the first line?
+*   `> my_variable = "I'm a string value!";`
+*   `> typeof my_variable;`
 
 #### Exercise
 
-*   `> var first, second`
-*   `> first = "hello"`
-*   `> second = "goodbye"`
-*   `> first = second`
-*   `> second = "wait, you've forgotten your hat!"`
+*   `> var first, second;` <-- We can create two (or more) new variables simultaneously with this syntax
+*   `> first = "hello";`
+*   `> second = "goodbye";`
+*   `> first = second;`
+*   `> second = "wait, you've forgotten your hat!";`
 
 What are first and second equal to after executing all those commands? Are they the same or different? In JavaScript, primitives (numbers, strings, booleans) are **pass by value**. This means that when you set one variable equal to another, the value stored there is copied over, and the two variables retain no lasting connection to each other. This is another exercise that you should not move past until you really understand it. Feel free to ask for help!
 
 **Hint:** After executing all of the commands above, try executing two more:
 
-* `> console.log(first)`
-* `> console.log(second)`
+* `> console.log(first);`
+* `> console.log(second);`
 
 How do the results relate to the "pass by value" concept described earlier?
 
@@ -235,7 +227,7 @@ Now try some on your own:
 ### Exercise 5:
 
 1.  Declare at least 10 variables such as 'name', 'age', 'birthday', 'hometown', 'occupation', 'favoriteFood', 'bestFriend', etc, and set their values equal to strings containing the appropriate information about yourself.
-2.  console.log a paragraph about yourself using the appropriate variables to insert the relevant information in the appropriate places.
+2.  console.log a paragraph about yourself using the appropriate variables to insert the relevant information in the appropriate places. **Hint:** Remember, we can concatenate strings using `+`
 3.  Create a new HTML document and re-write the variables and the console.log in a `<script>` tag so that you'll have it for later.
 
 ### Manipulating the DOM
@@ -244,13 +236,15 @@ Now try some on your own:
 
 Open [this page](resources/dom_example.html) (you may need to copy and paste the html into a new file and save it) and try the following in the JavaScript console:
 
-*   `> document.body`
-*   `> document.querySelector('p')`
-*   `> document.querySelector('#primary')`
-*   `> document.querySelector('.important')`
-*   `> document.querySelector('p.important').textContent`
-*   `> document.querySelector('#nav ol li').textContent`
-*   `> document.querySelector('h1, p').textContent = "I'm on the page!"`
+*   `> document.body;` <-- Don't get confused, this is just a shortcut for: `document.querySelector('body')
+*   `> document.querySelector('p');`
+*   `> document.querySelector('#primary');`
+*   `> document.querySelector('.important');`
+*   `> document.querySelector('p.important').textContent;`
+*   `> document.querySelector('#nav ol li').textContent;`
+*   `> document.querySelector('h1, p').textContent = "I'm on the page!";`
+
+Having trouble understanding how each of the query selectors work? Use this [handy reference](../../resources/query_selector_reference.md) to help decipher them!
 
 ### Exercise 6:
 
@@ -258,21 +252,17 @@ Open [this page](resources/dom_example.html) (you may need to copy and paste the
 2.  Use the console to retrieve the first element that matches a particular CSS selector.
 3.  View that element's current textContent from the console.
 4.  Set that element's textContent to a new string.
-5.  Do this exercise once for each selector type shown above.
-
-Having trouble understanding how each of the query selectors work? Use this [handy reference](../../resources/query_selector_reference.md) to help decipher them!
 
 ### Exercise 7: Selector!
 
-*   `> document.querySelector('h1').textContent = "Behold! For I am a mighty web document!"`
-*   `> var big_shot = document.querySelector('#primary')`
-*   `> big_shot.textContent = "Flippin' heck, I'm by far the most important element around!"`
-*   `> document.querySelector('.important').textContent = "Do all .important elements change or only one?"`
-
+*   `> document.querySelector('h1').textContent = "Behold! For I am a mighty web document!";`
+*   `> var big_shot = document.querySelector('#primary');`
+*   `> big_shot.textContent = "Flippin' heck, I'm by far the most important element around!";`
+*   `> document.querySelector('.important').textContent = "Do all .important elements change or only one?";`
 
 Design an HTML page with HTML elements to match the selectors used above. With that page loaded into the browser, type the above expressions into the console. **Do your changes persist if you reload the page? Why is this?**
 
-Now move the JavaScript code into a script tag just before the `</body>`. **What's changed?**
+Now move the JavaScript code into a script tag just before the `</body>`. **What's changed?** Make **sure** you understand this before moving on. Ask the instructor if you need help!
 
 ### Exercise 8: Greeter!
 
@@ -287,11 +277,11 @@ Now move the JavaScript code into a script tag just before the `</body>`. **What
 
 ### Exercise 9: Shuffle!
 
-1.  Create a `<div>` with an id of `source`, and one with the id of `destination`, each with some text inside.
+1.  Create a `<div>` with an id of `source`, and another one with the id of `destination`, each with some text inside.
 2.  Fetch the textContent of `source` and save it as a variable.
 3.  Use the variable to place that text in the `destination` div
 4.  Create `<div>`s with a ids of `swap_1` and `swap_2`.
-5.  How can we swap the textContent of the two divs?
+5.  How can we swap the textContent of the two divs? **Hint:** If you've never encountered swapping in programming before, think about how a third variable might be useful here.
 
 ### Exercise 10: Mad Libs!
 
@@ -305,31 +295,33 @@ Now move the JavaScript code into a script tag just before the `</body>`. **What
 
 Play with the following in your console until you understand how they work:
 
-    num = 1
-    num = num + 5
+```javascript
+num = 1;
+num = num + 5;
 
-    // assignment
-    num += 5
-    num -= 1
-    num *= 3
-    num /= 0.5
+// assignment
+num += 5;
+num -= 1;
+num *= 3;
+num /= 0.5;
 
-    // increment and decrement
-    num++
-    num--
+// increment and decrement
+num++;
+num--;
 
-    // operators before the variable
-    // what's the difference?
-    ++num
-    --num
+// operators before the variable
+// what's the difference?
+++num;
+--num;
+```
 
 #### Escaping Strings
 
-`> "Well now...\nThis is " + "rather clever, \n\tdon't you think?"`
+`> "Well now...\nThis is " + "rather clever, \n\tdon't you think?";`
 
 An escape character indicates an alternative interpretation of the subsequent character in a character sequence. In JavaScript the slash character denotes that the character after it might be a tab (\t) or new line (\n).
 
-`> '"Single quotes work too" ,she said.' + " " + 'Though I\'d not thought it possible'`
+`> '"Single quotes work too" ,she said.' + " " + 'Though I\'d not thought it possible';`
 
 Escape characters may be needed to indicate that we're looking to print a literal single (\') or double quote (\") and not signal the end of a string of text.
 
@@ -340,3 +332,15 @@ Escape characters may be needed to indicate that we're looking to print a litera
 **Now this one:**
 
 `'I'd often think' * "to myself, "Well, what's the worst wrong that could go wrong?". I guess" * "now we know..."`
+
+#### CodeAcademy
+
+The further we get into the JavaScript material and concepts, the more important that your foundational understanding and skill with JavaScript syntax becomes. If you have some free-time, the JavaScript code academy track is a great way to polish your ability to write simple JavaScript quickly, and with proper syntax.
+
+### Further Reading
+
+There's so much to know about JavaScript, and so little time to cover it in this course! If you've run out of things to do, here are a few things worth reading:
+
++ [Eloquent JavaScript](http://eloquentjavascript.net/) - Start with the introduction and Chapter 1
+
++ Read up on dynamically typed vs statically typed languages, and JavaScript type coercion

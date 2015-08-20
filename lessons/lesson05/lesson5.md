@@ -19,7 +19,7 @@ This will be an exercise in ignoring complexity* and zeroing to finding only the
 You can make this page about anything, but if you're lacking inspiration [may I suggest...](https://www.google.com/search?q=adorable+animals&tbm=isch)
 
 1. Add the above link code to the head of a fresh HTML document.
-2. rowse through the documentation of the CSS portion of Boostrap.
+2. Browse through the documentation of the CSS portion of Bootstrap.
 3. Create a simple **grid system** for your page.
 4. Create a section of **lead body copy**
 5. Use some **marked text**

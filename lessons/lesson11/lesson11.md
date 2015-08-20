@@ -1,4 +1,4 @@
- # Lesson 10: Arrays
+ # Lesson 11: Arrays
 
 Strings are secretly collections of letters stored at sequential memory addresses.
 
