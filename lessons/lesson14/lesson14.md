@@ -11,9 +11,9 @@ jQuery is a library (a bunch of pre-written code), written in JavaScript, design
 </script>
 ```
 
-### Exercise 1:
+### Exercise 1
 
-Place the above in a fresh HTML document, just above the closing body tag. The first tag includes the jQuery library and makes it available to the page. The second script uses it to do some work.
+Place the above in a fresh HTML document, just above the closing body tag. The first tag includes the jQuery libary and makes it available to the page. The second script uses it to do some work.
 
 ## The $ Character
 
@@ -24,7 +24,7 @@ In the same way that `window` stores an object with a bunch of properties and me
 `$()` is a function designed to accept a [CSS selector](../../resources/query_selector_reference.md) (in string format) as input, and return all matching elements, but wrapped with jQuery super powers. The last part will make more sense in a bit.
 
 
-### Exercise 2:
+### Exercise 2
 
 Referencing [the documentation](http://oscarotero.com/jquery/), **Create an appropriate HTML document on which to try out the following:**
 
@@ -37,7 +37,7 @@ Referencing [the documentation](http://oscarotero.com/jquery/), **Create an appr
 
 **Hint:** Ctr/Command + F is your friend for searching documentation.
 
-### Exercise 3:
+### Exercise 3
 
 Using [the provided HTML document](jquery-select.html)
 
@@ -110,7 +110,7 @@ $('body').append(new_div)
 new_div.fadeOut(2000).delay(1000).fadeIn().slideUp(4000)
 ```
 
-Here we are creating new jQuery-wrapped HTML elements in JavaScript memory, manipulating them, then appending them to the DOM, which makes them appear on the page. We are also using [method chaining](http://schier.co/blog/2013/11/14/method-chaining-in-javascript.html) to run multiple consecutive operations on a jQuery wrapped DOM node.
+Here we are creating new jQuery-wrapped HTML elements in JavaScript memory, manipulating them, then appending them to the DOM, which makes them appear on the page. We are also using [method chaining](http://schier.co/blog/2013/11/14/method-chaining-in-javascript.html) to run multiple consecutive operations on a jQuery wrapped DOM node. 
 
 Method chaining works because each method we call returns another JQuery object which has access to all of the JQuery methods; this allows us to chain methods indefinitely.
 
@@ -126,7 +126,7 @@ Construct an HTML document entirely using jQuery...
 6.  Use jQuery to change the image to be really small
 7.  Now make it really big
 8.  Now add a few more images and some text captions and use various jQuery effects to make them dance around!
-9.  Use `Math.random()` and `position:fixed` to randomize the placement of the various HTML elements on your page. Every time you hit refresh, your page should rearrange itself.
+9.  Use `Math.random()` and `position:fixed` to randomize the placement of the various HTML elements on your page. Every time you hit refresh, your page should rearrange itself. 
 
 **Hint:** `window.innerHeight` and `window.innerWidth` might come in handy. Look up what they do.
 

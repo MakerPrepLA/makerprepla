@@ -28,16 +28,19 @@ A piece of data of type `string` and another of type `number` will never truly b
 
 #### Exercise 1
 
-1.  Use the console to write an expression which compares two strings and produces a true value.
-2.  Write an expression comparing two strings which produces a false value.
+1.  Use the console to write an expression which compares two strings and produces a `true` value.
+2.  Write an expression comparing two strings which produces a `false` value.
 3.  Determine whether string comparison is case sensitive
 4.  Determine whether string comparison is space sensitive (does adding extra spaces change the outcome?)
-5.  Write an expression that considers the equivalency of a string and a number and produces a false value
-6.  Write an expression that considers the equivalency of a number and a string and produces a true value
+5.  Write an expression that considers the equivalency of a string and a number and produces a `false` value
+6.  Write an expression that considers the equivalency of a number and a string and produces a `true value`
 
 ## Conditional Statements
 
 The `if` statement runs a series of lines of code (a **code block**) depending on whether a programmer-specified boolean condition evaluates to `true` or `false`. Since these are multi-line statements, they'll be hard to type into the console. Luckily, we can use a tool like [repl.it](http://repl.it/) which is much nicer than using the Chrome Console when working with large blocks of code. **Remember to save your work in Sublime when you're done with it!**
+
+Alternatively, you can use `[SHIFT + ENTER]` in the Chrome console to type multiple lines into a single console input. Finally, `<script>` tags are always an option, just remember that they're not a REPL; if you want to know what an expression inside of a `<script>` tag evaluates to, you'll need to manually log or alert it.
+
 
 #### Exercise 2
 
@@ -67,19 +70,19 @@ if ( prompt("How you doing?") === "good" ) {
 
 #### Exercise 3
 
-1.  Write an if statement that always runs its code block
-2.  Write an if statement that never runs its code block
+1.  Write an `if` statement that always runs its code block
+2.  Write an `if` statement that never runs its code block
 3.  Write a statement that logs a message of encouragement if a visitor, when prompted, responds that they are sad.
 4.  Write a statement that alerts a warning if a visitor, when prompted, does not guess that the secret number is 3.
 5.  Prompt the visitor to enter a password when they visit your site. If it is correct, welcome them. Otherwise, direct them elsewhere using this line of code:
 
-`window.location = "http://www.google.com";`
+`window.location = "http://www.google.com";` (This code will not work in repl.it, you'll need to use a `<script>` tag or the JavaScript console)
 
 Why do you think that worked? Look it up [online](https://developer.mozilla.org/en-US/docs/Web/API/Window/location)!
 
 ### Else
 
-`if` has a companion called `else` that does exactly what you would expect it to. The `else` block is only executed in the case that the `if` block isn't. Lets take a look:
+`if` has a companion statement called `else` that does exactly what you would expect it to. The `else` block is only executed in the case that the `if` block isn't. Lets take a look:
 
 ```javascript
 // run this once with it set to true, and then another time with it set to false
@@ -166,13 +169,24 @@ if (age < 21) {
 }
 ```
 
-What would happen if Bob was 35 or younger? How can we fix this?
-
 ## Logical And `&&` , Logical Or `||`, Ternary Operator
 
 #### Exercise 5
 
-Type each of the following into the console. What do they each evaluate to?
+In JavaScript, some values (when placed in an expression that will evaluate to true or false, such as when they're being used by logical operators) are considered "truthy" or "falsy"; this simply means that in the context of a logical operator, they evaluate to `true` or `false` despite the fact that they are not of boolean type.
+
+For example, in JavaScript, all non-empty strings are considered "truthy", and as a result:
+
+```javascript
+var user_answer = "hello";
+
+if (user_answer) {
+  // this alert will go off because user_answer is "truthy"
+  alert(user_answer);
+}
+```
+
+Type each of the following into the console. What do they each evaluate to? Pay particular attention to the concept of "truthiness".
 
 *   `> !true;`
 *   `> !false;`
@@ -196,15 +210,9 @@ Type each of the following into the console. What do they each evaluate to?
 *   `> true || "sigh, i'm not needed";`
 *   `> false || "default value";`
 
-**Tip:** `[SHIFT + ENTER]` let's you type multiple lines into a single console input, like so:
+If the results of those last four confuse you, they will make more sense in a little bit when you get to the "Default and guard operator" section. Try running them inside of an `if` statement as the condition to see if the code block gets executed.
 
-```javascript
-> if (true || false) {
- alert('Its always one or the other!');
-} else if (true && false) {
- alert('But never both!');
-}
-```
+If you still don't understand the concept of "truthiness", or at least have a vague grasp of how it works, **feel free to ask the instructor.** Don't worry though, this concept will become clear as you practice JavaScript more and more.
 
 ## Pseudocode:
 
@@ -263,7 +271,7 @@ Create a "choose your own adventure" style text adventure game by using multiple
 
 + Learn to use the [switch statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)
 
-+ Learn about JavaScript [truthiness](http://james.padolsey.com/javascript/truthy-falsey/)
++ Learn more about JavaScript [truthiness](http://james.padolsey.com/javascript/truthy-falsey/)
 
 + Learn to use [try...catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) statements for error handling. How does `finally` work? Write some code that throws an exception/error, catches it, and then "finally" does something. Why might this pattern be useful?
 

@@ -1,295 +1,204 @@
-# Lesson 10: Objects
+# Lesson 9: Functions
 
-JavaScript has two built-in [associative array](//en.wikipedia.org/wiki/Associative_array) data types to help us store and work with collections of values: Objects, which are collections of values accessible at arbitrary string keys, and Arrays which are collections of values accessible at sequential integer keys. We'll go over Objects today, and Arrays in our next lesson (because they're actually just objects!)
-
-**Note:** There are many code snippets in this lesson. Please try them all out on your own, but do **not** copy and paste them.
-
-This is an object:
+A function is an object containing a [subroutine](https://en.wikipedia.org/wiki/Subroutine) that defines a sequence of lines of code, packaged as a unit. When defined and saved as a variable, we can reference it by that variable name, and use the invocation operator `()` to run it 0, 1, or many times.
 
 ```javascript
-var person = {
-  "name": "Mario",
-  "job": "Plumber"
-}
+// definition
+var greeter = function () {
+  console.log( "Hello, nice to meet you." )
+};
 
-person["name"] // "Mario"
-person["job"] // "Plumber"
+// do we see a console.log yet?
+
+// reference
+greeter;
+
+// do we see a console.log yet?
+
+// invocation
+greeter();
+
+// do we see a console.log yet?
+
+greeter();
+greeter();
+greeter();
+// what about now?
 ```
 
-![person object](resources/object.png)
-
-We can use the bracket syntax to access and set values
-
-```javascript
-person['name'] = 'Luigi'
-```
-
-![person object](resources/object2.png)
-
-We can declare empty objects and assign key-value pairs later
-
-```javascript
-var person = {}
-
-person["name"] = "Mario"
-person["job"] = "Plumber"
-
-person["name"] // "Mario"
-person["job"] // "Plumber"
-```
+The above is a function that creates side effects when run. The function's side effect is a message logged in the console. Run each of the above lines of code one at a time. At what point does the greeting actually appear in the console?
 
 ### Exercise 1:
 
-1.  Create a variable called `myCat` and assign to it an empty object
-2.  Assign `myCat` a `name` property, which should hold a string value
-3.  Add an `age` property holding an integer value
-4.  Add an `alive` property holding a boolean value
-5.  Add at least four more properties such as `favoriteToy`, and `nappingSpot`
+1.  Define a function that console.logs a simple message and the time: `new Date()`
+2.  Invoke your function multiple times from the console.
+3.  Place your function in a script tag in an HTML document.
+4.  Invoke it multiple times in the script tag.
+5.  Open the HTML document in your browser and hit reload a few times.
+6.  Define a function that generates an enthusiastic string of text and alerts it to the screen.
+7.  Invoke it a few dozen times from the console.
 
-Something to note- because property keys are always string values, quotation marks are optional:
+## Returning Values from Functions
+
+A function w/ a return value, but no side effects
 
 ```javascript
-var person = {
-  "name": "Mario",
-  "job": "Plumber",
-  "age" : 55,
-  "licensed": true
-}
+var greeter = function () {
+  return 'Hello'
+};
 
-//this does the same thing
-var person = {
-  name: "Mario",
-  job: "Plumber",
-  age : 55,
-  licensed: true
-}
+// saving the return value
+var greeting = greeter();
+
+// what value does the variable greeting hold?
+
+// using the return value to compose larger expressions
+console.log(greeting + ", nice to meet you.");
+
+// what's the difference here?
+console.log(greeter() + ", nice to meet you.");
 ```
 
-Often times we access properties of our objects using variables instead of string literals:
+The result of evaluating an expression consisting of a function reference, followed by an invocation operator, is the value to the right of the keyword `return` inside the function when the code is run. Bet you can't say that 5 times fast! Lets look at it in practice:
 
 ```javascript
-var human = {}
-human['name'] = 'bob'
-human['age'] = 75
+var saying_generator = function () {
+  var phrase = "Heeey, " + "it's the " + " Fonz.";
+  return phrase;
+};
 
-var property = 'age'
+// What is the return value? saying will now === phrase
+var saying = saying_generator();
 
-// what property key are we referencing here? what is its value?
-human[property]
+var broken_saying_generator = function () {
+  var phrase = "Heeey, " + "it's the " + " Fonz."
+  phrase
+};
 
-property = 'location'
-
-// at what key will we find the value "San Francisco"? Test it out to make sure you're right.
-human[property] = 'San Francisco'
+// What about now?
+var broken_saying = broken_saying_generator();
 ```
 
 ### Exercise 2:
 
-1.  Create a variable called `myDreamLife` and assign to it an empty object
-2.  Create a variable called `propertyKey` and assign to it the string value `"job"`
-3.  Use the `propertyKey` variable, not the literal string `"job"` to add a `job` property to your dream life object. Hint: `myDreamLife[propertyKey] = 'some job'`
-4.  Create a variable `anotherPropertyKey` and give it a value "salary".
-5.  Use `anotherPropertyKey`, not the literal string `"salary"`, to quantify the value of human life.
-6.  What does `myDreamLife[propertyKey]` return?
-7.  What does `myDreamLife["job"]` return?
-8.  Assign a string `"car"` to the variable `nextProperty`
-9.  Use the variable `nextProperty` to add your dream car to your dream life object.
-10.  What does `myDreamLife[nextProperty]` return?
-11.  What does `myDreamLife["car"]` return?
-12.  Assign `myDreamLife` three more properties (with values) using variables rather than literal strings and access them each using variables as well.
+1.  In a script tag, define a new function called `get_sentence`
+2.  `get_sentence` should select a sentence randomly between two or more options and return it
+3.  Save the return value to a variable called `new_sentence`
+4.  Use a querySelector to put the sentence inside a `<p>` in the HTML docuemnt
+5.  Refactor your code so that it doesn't need the `new_sentence` variable
+6.  Use a while loop to run `get_sentence` ten times in a row so we can make sure the sentence really is random.
+7.  What is the statistical likelihood that we randomly get the same sentence ten times in a row?
 
-## Dot Notation
 
-We use the `person["job"]` syntax so often, JavaScript decided to include a more confusing way to do the same thing: `person.job`. It's called **dot notation** as opposed to the **bracket notation** we used earlier.
+## Keyword "arguments"
+During every function invocation, you have access to the arguments keyword, which contains all the inputs to the function invocation. Play with this concept until **you're sure** you understand it. Ask for help if you need it.
 
 ```javascript
-var car = {
-  make: "Toyota"
-}
+//this function lets you "inspect" the arguments keyword
+var inspector = function () {
+  console.log(arguments);
+};
 
-car["model"] = "Camry"
-car["model"] // what does this evaluate to?
-car.model // what does this evaluate to?
+// try each invocation individually and ponder the result
+inspector(3);
 
-car.model = "Prius"
-car["model"]
-car.model
+inspector(3 + 7);
+inspector(3, 7);
 
-var prop = 'year'
-// how can we set the car's year using the variable prop?
+inspector("hello");
+inspector("hello" + " " + "how are you");
+inspector("hello", "how are you");
+
+inspector("hello", 7, true, undefined, null, 3 + 12, "nice to" + " meet you");
 ```
 
-### Exercise 3:
+### Exercises 3:
 
-1.  Which should we use above: `car[prop] = 1992` or `car.prop = 1992`? Try both ways!
-2.  What happens when you ask for a property that is not registered to the object? i.e. to what value does the expression `car['nothingHere']` resolve to? what about `car.nothingHere`?
-3.  Create your own `dreamCar` object.
-4.  **Use dot notation** to add properties `make`, `model`, and `color` with values of type string, `year` with a value of type number, and `registered` with a value of type boolean.
+1.  Create a function `log_and_return` that console.logs all of its inputs and then returns them from the function invocation.
+2.  Store the return value as a variable `returned_values`
+3.  Pass that variable as an argument to a second invocation of `log_and_return`
 
-#### Exercise:
-
-On lines ending '??', figure out what the expression will evaluate to. **First form a hypthosis**, then **try it in the console**.
+It's unwieldy to work with the `arguments` keyword directly. Usually we use named **parameters** to give our inputs (arguments) variable names for the length of the function invocation
 
 ```javascript
-var demo_object = {
-    one: 1,
-    two: 2,
-    three: 3
-}
-var one = "three"
+var value_logger = function (value) {
+  console.log(value);
+};
 
-demo_object['two'] // ??
-demo_object[one] // ??
+value_logger("Howdy ho, neighborino!");
 
-var state_capitals = {
-    California: 'Sacramento',
-    Texas: 'Austin'
-}
+// parameters and variables defined in function invocations are local to that invocation
+value;     // ReferenceError: No variable 'value' exists
 
-var place = 'California'
+value_logger(3 + 7);
 
-state_capitals['place'] // ??
-state_capitals.place   // ??
-state_capitals[place] // ??
+// where's the seven?
+value_logger(3, 7);
 
-state_capitals['California'] // ??
-state_capitals.California   // ??
-state_capitals[California] // ??
+var doubler = function (num) {
+  return num * 2;
+};
+
+// is it ten?
+var should_be_ten = doubler(5);
+
+var double_value_logger = function (value1, value2) {
+  console.log(value1, value2);
+};
+
+double_value_logger("hello", "how are you");
+
+// what is value2?
+double_value_logger("hello");
+
+var add = function(num1, num2){
+  return num1 + num2;
+};
+
+var sum = add(7, 12);
 ```
 
-Sometimes we'll want to iterate over every property in an object. Since we don't know the names of the keys beforehand, and the keys aren't sequential integers, we can't use a while loop. There is a special language-level statement to handle this, the `for in` loop.
+### Exercise 4: Simple Math
 
-```javascript
-var obj = {
-    greeting: 'howdy',
-    direction: 'down',
-    color: 'red',
-    'spaces-and-dashes can be used': ' but need to have quotes'
-}
+1.  Write a function called `tripler` that takes a number and returns triple the value.
+2.  Create a function `multiply` that takes two numbers as inputs and returns their product
+3.  Create a function `divide` that takes two numbers as inputs and returns the result of dividing the first by the second
+4.  Create a function `remainder` that takes two numbers as inputs and returns the result of modulo(`%`) the first by the second
+5.  Using only the functions you wrote above, and no operators, calculate the value of tripling 5, multiplying that by 12, dividing by 2 and then finding the remainder of dividing that by 3.
+6.  Write 4 more lines of code that use all of your math functions in a single expression
 
-for (var key in obj) {
-    console.log(obj[key]) //why don't we need quotes around key??
-    // what would happen if we logged obj.key instead? Why? Test it.
-}
-```
-
-### Exercise 4:
-
-1.  Use a `for in` loop to iterate over your `cat`, `dreamCar` and `dreamLife` objects. Re-write the loop from scratch each time and use a variable name other than `key` for each one.
-2.  Use a `for in` loop to search `obj` for the key `color` and print its value to the console.
-3.  Search `obj` for the value `"down"`, and append its key to a div.
-4.  Create a variable `targetKey` and assign it a string `"greeting"`. Use the `targetKey` variable and `for in` to find the `greeting` property and log its value.
-
-## String Operations
-
-```javascript
-var greeting = "Hello and welcome!"
-
-greeting[0] // "H"
-
-!!greeting.match("welcome") // true
-!!greeting.match("goodbye") // false
-
-var words = greeting.split(' ')
-```
+## Looping Functions
 
 ### Exercise 5:
 
-1.  Loop through the politicos object and concatenate everyones names together, separated by a space. Final result should look something like this: 'hillary clinton barack obama michelle obama joe biden jerry brown'
-2.  Loop through the politicos object and count the number of people whose name contains the word "obama".
+Remember while loops?
 
-```javascript
-var politicos = {
-    secretary_of_state: 'hillary clinton',
-    potus: 'barack obama',
-    flotus: 'michelle obama',
-    vice_prez: 'joe biden',
-    gov_of_california: 'jerry brown'
-}
-```
+1.  Write a function called `factoral_of_n` that takes a number and returns the [factoral](//en.wikipedia.org/wiki/Factorial) i.e. `factoral_of_n(5)` should return 120 (5x4x3x2x1).
+2.  Write a function called `count_by_n` that has parameters `count_by` and `count_up_to`, and console.log's the numbers up to `count_up_to` by intervals of `count_by`.
 
-### Exercise 6:
+### Exercise 6: FizzBuzz 2 - FizzBuzz Rises
 
-1.  Create a new empty object `b_named_politicos`
-2.  Console.log any politico whose first OR last name starts with a 'b' as a property of the `b_named_politicos` object with their job title as the key and their name as the value
-3.  Create a new empty object called `reverse_politico_lookup` by iterating over the politicos object and adding each person to the `reverse_politico_lookup` object with their name as a key and their job title as the value. The final object should look something like this:
+**Rewrite the below from scratch if you can, try not to reference your previous fizzbuzz code.**
 
-```javascript
-var reverse_politico_lookup = {
-    'hillary clinton': 'secretary_of_state',
-    'barack obama': 'potus',
-    'michelle obama': 'flotus',
-    'joe biden': 'vice_prez',
-    'jerry brown': 'gov_of_california'
-}
-```
+1.  Write a function `this_that` that takes in two strings and reimplements fizzBuzz using those two words instead of 'fizz' and 'buzz' (prints the numbers from 1 to 100\. But for multiples of three print word1 instead of the number and for the multiples of five print word2\. For numbers which are multiples of both three and five print word1word2.)
+2.  In the first iteration, have `this_that` return a long string of the counting seperated by commas
+4.  Allow the user to input a `count_up_to` argument
+5.  Allow the user to input `fizz_num` and `buzz_num` arguments to set the word substitutions to multiples of something other than 3 and 5
 
-### Complex Objects
+### Exercise 7: Fibonacci
 
-Objects can hold values of any data type. That includes arrays, functions (we'll learn about both of those soon), and even objects.
+By definition, the first two numbers in the Fibonacci sequence are 0 and 1, and each subsequent number is the sum of the previous two. For example, the first ten Fibonacci numbers are:
 
-```javascript
-var complex_object = {
-  string: "I'm a string!",
-  number: 42,
-  //don't worry about this too much yet, just accept thats its a different data type
-  array: ["all sorts of stuff", 10, true, undefined, function(){console.log('beepity-beep')}],
-  //we haven't covered functions yet either, just accept that they too can be stored in objects
-  fn: function(){
-    console.log("fn has been invoked! Checking both kinds of invocation-time inputs...")
-    console.log("what is my calling context?", this)
-    console.log("what are my arguments?", arguments)
-  },
-  //Now THIS is interesting, an object INSIDE of an object!?
-  simple_object: {name: 'bob', location: 'basement'},
-}
+`0, 1, 1, 2, 3, 5, 8, 13, 21, 34`
 
-complex_object.string
-complex_object.array[4]
-complex_object.simple_object.name
-complex_object.fn("stuff", "more stuff", "even more stuff!")
-```
+Write a function that accepts a number and returns the number at that position in the fibonnaci sequence.
 
-### Exercise 7:
+### Extra Credit
 
-1. Try console logging all of the values in `complex_object`
-2. `simple_object` is an object inside of an object. How might we access its properties? Try to console log the value of the "name" property inside of simple_object (which is nested inside of complex_object)
-3. Try to use a `for in` loop to console log all of the properties inside of `simple_object`
-4.  Create your own complex object. How deep can you nest objects inside of each other? Are you still able to access the properties of the nested object?
+Use the sum, multiple, divide, and remainder functions you wrote earlier to create a "calculator" function. This function should accept three parameters. The first two parameters are the numbers on which to perform an operation, and the third parameter should be a string which specifies which mathematical operation to perform on the two numbers.
 
+### Nightmare Mode
 
-## Extra Credit / Nightmare Mode
+Learn about [generators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators) and create a generator that yields the next fibonacci number each time its called, and can be reset by passing it a value of `true`.
 
-Did you know that almost every data type in Javascript is an object? Puzzle over this:
-
-```javascript
-//strings
-typeof "asdf"; // "string"
-
-"asdf".length; // 4
-
-"asdf".replace('asdf', 'apple'); // "apple"
-
-//numbers
-(10).toString; // "10"
-```
-
-The above examples demonstrate that almost everything in JavaScript is an object, and have properties just like regular objects. However, primitives don't behave exactly like regular objects because they are immutable. This means that you can't directly add or remove properties. Try this:
-
-```javascript
-var testString = 'Hello'; // "Hello"
-testString.greeting = 'Welcome!'; // "Welcome!"
-
-console.log(testString.greeting); // undefined
-```
-
-That's pretty straightforward, but what about this:
-
-```javascript
-var testString = 'Hello'; // "Hello"
-testString.constructor.prototype.greeting = 'Welcome!' // "Welcome!";
-
-console.log(testString.greeting); // "Welcome!"
-```
-
-To understand why *that* worked you'll have to dive deep into the strange and mysterious world that is JavaScript prototypical inheritance. This topic will take you a very long time to understand, and will frustrate you immensely, but eventually you'll get it :) [This](http://eloquentjavascript.net/06_object.html) is a great place to start
+**Hint:** The problem is solved for you in the documentation link above, but you need to implement it on your own **AND** understand it. Once you think you've got it, reimplement FizzBuzz as a generator.

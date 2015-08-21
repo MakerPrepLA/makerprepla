@@ -57,7 +57,6 @@ $('#target').click(function(){
 5.  Make it so that when a user clicks on one item to show it, all the others hide first if they are already shown.
 6.  When a user clicks on an item that is already shown, hide it instead.
 
-
 ### Exercise 3
 
 ```javascript
@@ -78,7 +77,6 @@ $('#target').on('mouseleave', function(){
 6.  How many different ways can you think of to accomplish that task?
 
 **Aside:** If you have some free time later, take a minute to check out her Wikipedia page and read the paragraph about her work on the Apollo 11 project.
-
 
 ### Exercise 4
 
@@ -134,7 +132,7 @@ $('button#go').on('click', function(){
 });
 ```
 
-1.  Guess what the code above does. How would you go about testing your theory?
+1.  Guess what does the code above does. How would you go about testing your theory?
 2.  Place the above code in a fresh HTML document
 3.  Create the correct HTML elements referenced by the click handler
 4.  Now that you understand how the code works, change it so that when a user types a color into the input and presses the go button, the background color of the page changes to that color
