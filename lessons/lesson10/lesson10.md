@@ -1,11 +1,11 @@
-# Lesson 9: Functions
+# Lesson 10: Functions
 
 A function is an object containing a [subroutine](https://en.wikipedia.org/wiki/Subroutine) that defines a sequence of lines of code, packaged as a unit. When defined and saved as a variable, we can reference it by that variable name, and use the invocation operator `()` to run it 0, 1, or many times.
 
 ```javascript
 // definition
 var greeter = function () {
-  console.log( "Hello, nice to meet you." )
+  console.log( "Hello, nice to meet you." );
 };
 
 // do we see a console.log yet?
@@ -28,7 +28,7 @@ greeter();
 
 The above is a function that creates side effects when run. The function's side effect is a message logged in the console. Run each of the above lines of code one at a time. At what point does the greeting actually appear in the console?
 
-### Exercise 1:
+#### Exercise 1:
 
 1.  Define a function that console.logs a simple message and the time: `new Date()`
 2.  Invoke your function multiple times from the console.
@@ -40,11 +40,11 @@ The above is a function that creates side effects when run. The function's side 
 
 ## Returning Values from Functions
 
-A function w/ a return value, but no side effects
+A function with a return value, but no side effects
 
 ```javascript
 var greeter = function () {
-  return 'Hello'
+  return 'Hello';
 };
 
 // saving the return value
@@ -71,54 +71,30 @@ var saying_generator = function () {
 var saying = saying_generator();
 
 var broken_saying_generator = function () {
-  var phrase = "Heeey, " + "it's the " + " Fonz."
-  phrase
+  var phrase = "Heeey, " + "it's the " + " Fonz.";
+  phrase;
 };
 
-// What about now?
+// What about now? What causes this one to be broken?
 var broken_saying = broken_saying_generator();
 ```
 
-### Exercise 2:
+#### Exercise 2:
 
-1.  In a script tag, define a new function called `get_sentence`
-2.  `get_sentence` should select a sentence randomly between two or more options and return it
-3.  Save the return value to a variable called `new_sentence`
-4.  Use a querySelector to put the sentence inside a `<p>` in the HTML docuemnt
-5.  Refactor your code so that it doesn't need the `new_sentence` variable
-6.  Use a while loop to run `get_sentence` ten times in a row so we can make sure the sentence really is random.
-7.  What is the statistical likelihood that we randomly get the same sentence ten times in a row?
+1.  In a script tag, define a new function called `random_number`
+2.  `random_number` should a return a random number between 1 and 10.
+3.  Save the return value to a variable called `new_random_number`
+4.  console log `new_random_number`. **Note:** There should *not* be a `console.log` inside of your function definition.
+5.  Refactor your code so that it doesn't need the `new_random_number` variable
+6.  Run your code inside a while loop so that it generates 10 random numbers
 
+**Hint:** Remember, the formula for generating random number in javascript is:
 
-## Keyword "arguments"
-During every function invocation, you have access to the arguments keyword, which contains all the inputs to the function invocation. Play with this concept until **you're sure** you understand it. Ask for help if you need it.
+`Math.floor([minimum_value] + Math.random() * [maximum_value - minimum_value + 1]);`
 
-```javascript
-//this function lets you "inspect" the arguments keyword
-var inspector = function () {
-  console.log(arguments);
-};
+## Named Parameters
 
-// try each invocation individually and ponder the result
-inspector(3);
-
-inspector(3 + 7);
-inspector(3, 7);
-
-inspector("hello");
-inspector("hello" + " " + "how are you");
-inspector("hello", "how are you");
-
-inspector("hello", 7, true, undefined, null, 3 + 12, "nice to" + " meet you");
-```
-
-### Exercises 3:
-
-1.  Create a function `log_and_return` that console.logs all of its inputs and then returns them from the function invocation.
-2.  Store the return value as a variable `returned_values`
-3.  Pass that variable as an argument to a second invocation of `log_and_return`
-
-It's unwieldy to work with the `arguments` keyword directly. Usually we use named **parameters** to give our inputs (arguments) variable names for the length of the function invocation
+We use named **parameters** to give our inputs (**arguments**) variable names for the length of the function invocation
 
 ```javascript
 var value_logger = function (value) {
@@ -127,7 +103,9 @@ var value_logger = function (value) {
 
 value_logger("Howdy ho, neighborino!");
 
-// parameters and variables defined in function invocations are local to that invocation
+/* parameters and variables defined in function invocations 
+are local to that invocation. This is called "scope" and 
+we'll cover it in more detail in a later lesson */
 value;     // ReferenceError: No variable 'value' exists
 
 value_logger(3 + 7);
@@ -148,7 +126,8 @@ var double_value_logger = function (value1, value2) {
 
 double_value_logger("hello", "how are you");
 
-// what is value2?
+// what is value2? 
+// What happens to the value of a parameter when we don't pass it an argument?
 double_value_logger("hello");
 
 var add = function(num1, num2){
@@ -158,18 +137,18 @@ var add = function(num1, num2){
 var sum = add(7, 12);
 ```
 
-### Exercise 4: Simple Math
+#### Exercise 4: Simple Math
 
 1.  Write a function called `tripler` that takes a number and returns triple the value.
 2.  Create a function `multiply` that takes two numbers as inputs and returns their product
 3.  Create a function `divide` that takes two numbers as inputs and returns the result of dividing the first by the second
 4.  Create a function `remainder` that takes two numbers as inputs and returns the result of modulo(`%`) the first by the second
 5.  Using only the functions you wrote above, and no operators, calculate the value of tripling 5, multiplying that by 12, dividing by 2 and then finding the remainder of dividing that by 3.
-6.  Write 4 more lines of code that use all of your math functions in a single expression
+6.  Write 4 more lines of code that use all of your math functions in a single expression. **Hint:** This means that you use the return value of one function as an **argument** to another. You should be able to write a single expression that uses all of your math functions together, but doesn't require any temporary variables for intermediate values.
 
 ## Looping Functions
 
-### Exercise 5:
+#### Exercise 5:
 
 Remember while loops?
 
@@ -181,11 +160,10 @@ Remember while loops?
 **Rewrite the below from scratch if you can, try not to reference your previous fizzbuzz code.**
 
 1.  Write a function `this_that` that takes in two strings and reimplements fizzBuzz using those two words instead of 'fizz' and 'buzz' (prints the numbers from 1 to 100\. But for multiples of three print word1 instead of the number and for the multiples of five print word2\. For numbers which are multiples of both three and five print word1word2.)
-2.  In the first iteration, have `this_that` return a long string of the counting seperated by commas
-4.  Allow the user to input a `count_up_to` argument
-5.  Allow the user to input `fizz_num` and `buzz_num` arguments to set the word substitutions to multiples of something other than 3 and 5
+2.  Allow the user to input a `count_up_to` argument
+3.  Allow the user to input `fizz_num` and `buzz_num` arguments to set the word substitutions to multiples of something other than 3 and 5
 
-### Exercise 7: Fibonacci
+#### Exercise 7: Fibonacci
 
 By definition, the first two numbers in the Fibonacci sequence are 0 and 1, and each subsequent number is the sum of the previous two. For example, the first ten Fibonacci numbers are:
 
@@ -193,12 +171,18 @@ By definition, the first two numbers in the Fibonacci sequence are 0 and 1, and 
 
 Write a function that accepts a number and returns the number at that position in the fibonnaci sequence.
 
-### Extra Credit
+## Extra Credit
 
 Use the sum, multiple, divide, and remainder functions you wrote earlier to create a "calculator" function. This function should accept three parameters. The first two parameters are the numbers on which to perform an operation, and the third parameter should be a string which specifies which mathematical operation to perform on the two numbers.
 
-### Nightmare Mode
+## Nightmare Mode
+
+### Generators
 
 Learn about [generators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators) and create a generator that yields the next fibonacci number each time its called, and can be reset by passing it a value of `true`.
 
 **Hint:** The problem is solved for you in the documentation link above, but you need to implement it on your own **AND** understand it. Once you think you've got it, reimplement FizzBuzz as a generator.
+
+### Recursion
+
+Read the [recursion section](http://eloquentjavascript.net/03_functions.html) of chapter 3 of Eloquent JavaScript and then attempt to solve the recursion problem at the bottom of the page, under the "Exercises" section.
