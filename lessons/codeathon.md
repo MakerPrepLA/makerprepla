@@ -71,8 +71,8 @@ can be exchanged in a bank into three coins: n/2, n/3 and n/4 (a coin n can be t
 But these numbers are all rounded down (the banks have to make a profit).
 You can also sell MakerSquare coins for American dollars. The exchange
 rate is 1:1. But you can not buy MakerSquare coins.
-You have one MakerSquare gold coin. What is the maximum amount of American dollars
-you can get for it?
+If a user enters the value of their MakerSquare coins, what is the maximum amount of American dollars
+they can get for them?
 
 #### Sample Input:
 How many MakerSquare gold coins would you like to trade in? // 2
