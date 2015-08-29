@@ -117,7 +117,7 @@ There are 5 hole(s) in your input: a, a, g, a, b
 
 #### Implementation:
 * Prompt the user to enter a string.
-* Create a ‘hasHole’ function that has a ‘letter’ parameter and returns the letter if it contains a ‘hole’.
+* Create a ‘hasHole’ function that has a ‘letter’ parameter and returns whether the letter contains a ‘hole’ or not.
 * Use filter (the function you created earlier) in combination with your ‘hasHole’ function to create a new array containing the letters with ‘holes’ in them.
 * Print the number of holes in the string as well as what these ‘holy’ letters are.
 
