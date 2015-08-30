@@ -108,7 +108,7 @@ for (var i = 0; i < numberOfCoins; i++) {
 }
 
 var sum;
-var dollars = coins.map(function (coin) {
+var dollars = map(coins, function (coin) {
     var half = Math.floor(coin / 2);
     var third = Math.floor(coin / 3);
     var fourth = Math.floor(coin / 4);
@@ -128,7 +128,7 @@ function hasHole(letter) {
  	return letter === 'a' || letter === 'A' || letter === 'b' || letter === 'B' || letter === 'd' || letter === 'D' || letter === 'e' || letter === 'g' || letter === 'o' || letter === 'O' || letter === 'p' || letter === 'P' || letter === 'q' || letter === 'Q';
 }
 
-var filtered = arrInput.filter(hasHole);
+var filtered = filter(arrInput, hasHole);
 
 console.log("There are " + filtered.length + " hole(s) in your input: " + filtered.join(", "));
 ```
@@ -142,7 +142,7 @@ for (var i = 0; i < number; i++) {
     numbers.push(parseInt(prompt("Please enter the next number.")));
 }
 
-var results = numbers.map(function(number) {
+var results = map(numbers, function(number) {
     return getPalindrome(number);
 });
 
@@ -151,7 +151,6 @@ function getPalindrome(number) {
     while (true) {
         if (isPalindrome(number)) {
             return number;
-            isBool = true;
         } else {
              number++;
         }
@@ -174,12 +173,12 @@ var numberOfClicks = prompt("How many clicks will be made?");
 
 var postClicks = [];
 for (var i = 0; i < numberOfClicks; i++) {
-    postClicks.push(prompt("Which tweet would you like to click on? Enter 'c' for 'close all' or 'o' for 'open all'"));
+  postClicks.push(prompt("Which tweet would you like to click on? Enter 'c' for 'close all' or 'o' for 'open all'"));
 }
 
 var tweets = createEmptyArray(numberOfTweets);
 
-postClicks.forEach(function (click) {
+each(postClicks, function (click) {
     if (click === "o") {
         tweets = allOpen(tweets);
     } else if (click === "c") {
@@ -194,21 +193,21 @@ postClicks.forEach(function (click) {
 });
 
 function getCount(arr) {
-    var count = arr.reduce(function (previousValue, currentValue) {
+    var count = reduce(arr, function (previousValue, currentValue) {
         return previousValue + currentValue;
     }, 0);
     return count;
 }
 
 function allOpen(arr) {
-    var toReturn = arr.map(function (post) {
+    var toReturn = map(arr, function (post) {
         return 1;
     });
     return toReturn;
 }
 
 function allClosed(arr) {
-    var toReturn = arr.map(function (post) {
+    var toReturn = map(arr, function (post) {
         return 0;
     });
     return toReturn;
@@ -220,7 +219,7 @@ function createEmptyArray(sizeOfArray) {
      	toReturn[i] = 0;
     }
     return toReturn;
-};
+}
 
 console.log("Tweets: " + tweets);
 console.log(getCount(tweets) + " tweet(s) are open");
