@@ -1,0 +1,3 @@
+# Lesson 17: HACKATHON
+
+The purpose of this lesson is to solidify the students understanding of how functional programming, JQuery, events, ajax, and (hopefully) data structures can all be combined to create single-page applications. Students will use some API (reddit or twitter or whatever) and basically be allowed to build whatever they want. Haven't figured out exactly what this will look like yet.

@@ -1,5 +1,7 @@
 # Lesson 14: jQuery
 
+**NOTE:** JQuery makes frequent use of query selectors. You can refer back to this [query selector reference](../../resources/query_selector_reference.md) if you forgot how to use them.
+
 jQuery is a library (a bunch of pre-written code), written in JavaScript, designed to make it easier to manipulate a web page and do various web-related work.
 
 [Open it up](https://code.jquery.com/jquery-2.1.1.js) and skim over it. How many lines of code is it?
@@ -32,14 +34,16 @@ Referencing [the documentation](http://oscarotero.com/jquery/), **Create an appr
     $('img').attr('src','http://i.imgur.com/nWGCwiE.gif')
 
     $('h1').text('hello')
-    $('#notification').html('<div class="alert">Hold on! <b>an error</b> has occured!</p>')
+    $('#notification').html('<div class="alert">Hold on! <b>an error</b> has occured!</div>')
     $('.container').append("<p>What's the difference between <i>.append()</i> and .html()?</p>")
+
+**Note:** None of the JQuery above will work as is, you need to create the HTML elements that match the query selectors above!
 
 **Hint:** Ctr/Command + F is your friend for searching documentation.
 
 ### Exercise 3
 
-Using [the provided HTML document](jquery-select.html)
+Using [the provided HTML document](jquery_select.html)
 
 1.  Include the jQuery library in the file
 2.  Write an expression using jQuery that targets all h1 elements and makes their font-color blue
@@ -47,7 +51,7 @@ Using [the provided HTML document](jquery-select.html)
 4.  ... that targets the element with the id "everything" and increases its font-size
 5.  ... that targets all elements with the class "holder" and adds a black border
 6.  ... that targets all li elements within ul elements and bold them
-7.  ... that targets p elements coming immediately after an h1 element and makes it green
+7.  ... that targets p elements coming immediately after an h1 element and makes it green (**Hint:** Look up how to select HTML tags that are siblings)
 8.  ... that targets the element with the id of "secret" and changes its display property to 'none'
 9.  ... now change #secret's display property back to block
 10.  ... that targets the element with the id of "change-me" and changes its text to a new sentence
@@ -131,6 +135,10 @@ Construct an HTML document entirely using jQuery...
 **Hint:** `window.innerHeight` and `window.innerWidth` might come in handy. Look up what they do.
 
 ## Extra Credit
+
++ Try and apply the things you learned over the past two days regarding functional programming here. jQuery has a built in [each](http://api.jquery.com/jquery.each/) method, as well as a [map](http://api.jquery.com/jquery.map/) method. This [thread](http://stackoverflow.com/questions/708105/jquery-map-practical-uses-for-the-function) might give you some inspiration. You could even try using some of the test data from learnRx and using the same principles you learned there to manipulate the DOM based on that data.
+
++ Learn to use [JQuery.animate()](http://api.jquery.com/animate/)
 
 + Deploy the page you made in exercise 6 to [GitHub Pages](https://pages.github.com/)
 

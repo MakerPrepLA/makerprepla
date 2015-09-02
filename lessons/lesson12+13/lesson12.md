@@ -331,4 +331,4 @@ times10(32); // 320
 
 ## LearnRx
 
-Go to [learnRx](http://jhusain.github.io/learnrx/) and start working. Ask the instructor for guidance when you need it, but really do spend some time and try to figure these challenges out on your own. Its ok to struggle, we *want* you to struggle. If you feel comfortable, you're probably not learning.
+Go to [learnRx](http://reactivex.io/learnrx/) and start working. Ask the instructor for guidance when you need it, but really do spend some time and try to figure these challenges out on your own. Its ok to struggle, we *want* you to struggle. If you feel comfortable, you're probably not learning.
