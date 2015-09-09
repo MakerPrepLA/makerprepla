@@ -1,4 +1,4 @@
-# Lesson 18: Object Oriented Javascript
+# Lesson 17: Object Oriented Javascript
 
 Organizing code structures around objects rather than functions is called [Object Oriented](//en.wikipedia.org/wiki/Object-oriented_programming) programming.
 

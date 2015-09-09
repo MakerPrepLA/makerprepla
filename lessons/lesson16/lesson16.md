@@ -168,7 +168,3 @@ typeof jsonUsers;
 // $.ajax() converts incoming JSON strings back into arrays, objects and primitive values before passing it into your callback function.
 JSON.parse(products_array_represented_as_json_string);
 ```
-
-## Extra Credit:
-
-Did you know that you can get the contents of any reddit page in [json format](https://www.reddit.com/.json) by adding '.json' to the end of the URL? This data is much more complex than the other JSON forms that you dealt with in this lesson. See if you can create a reddit alternative using Ajax, JQuery, and the JSON data. If you're feeling uninspired, one idea would be to create a gallery application that you can use to navigate a subreddit using the left and right arrow keys. The application would show one subreddit title at a time, as well as a preview of a few of the comments. Users could then click on the preview to view the actual post and all its comments.
