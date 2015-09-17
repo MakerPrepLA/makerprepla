@@ -101,7 +101,7 @@ We can also chain `if` and `else` together to create more advanced logic flow. Y
 #### Exercise 4
 
 1.  Type out each of the following examples. **No copy & paste.**
-2.  Some of the examples below will require additional HTML or JavaScript in order to work. You may have to create HTML elements to match query selectors, or create and assign values to variables. Figure out whats needed and add it yourself! 
+2.  Some of the examples below will require additional HTML or JavaScript in order to work. You may have to create HTML elements to match query selectors, or create and assign values to variables. Figure out whats needed and add it yourself!
 3. Try changing the values of things and activating different conditional branches.
 4.  Write your own version of each conditional statement structure (from scratch) and test its behavior
 
@@ -205,7 +205,7 @@ Type each of the following into the console. What do they each evaluate to? Pay 
 *   `> false || true;`
 *   `> false || false;`
 
-*   `> true && "what does this evalute to?";`
+*   `> true && "what does this evaluate to?";`
 *   `> false && "and this?";`
 *   `> true || "sigh, i'm not needed";`
 *   `> false || "default value";`

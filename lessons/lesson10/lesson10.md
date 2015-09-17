@@ -31,7 +31,7 @@ The above is a function that creates side effects when run. The function's side 
 #### Exercise 1:
 
 1.  Define a function that console.logs a simple message and the time: `new Date()`
-2.  Invoke your function multiple times from the console.
+2.  Invoke your function multiple times.
 3.  Place your function in a script tag in an HTML document.
 4.  Invoke it multiple times in the script tag.
 5.  Open the HTML document in your browser and hit reload a few times.
@@ -103,8 +103,8 @@ var value_logger = function (value) {
 
 value_logger("Howdy ho, neighborino!");
 
-/* parameters and variables defined in function invocations 
-are local to that invocation. This is called "scope" and 
+/* parameters and variables defined in function invocations
+are local to that invocation. This is called "scope" and
 we'll cover it in more detail in a later lesson */
 value;     // ReferenceError: No variable 'value' exists
 
@@ -126,7 +126,7 @@ var double_value_logger = function (value1, value2) {
 
 double_value_logger("hello", "how are you");
 
-// what is value2? 
+// what is value2?
 // What happens to the value of a parameter when we don't pass it an argument?
 double_value_logger("hello");
 
@@ -137,7 +137,7 @@ var add = function(num1, num2){
 var sum = add(7, 12);
 ```
 
-#### Exercise 4: Simple Math
+#### Exercise 3: Simple Math
 
 1.  Write a function called `tripler` that takes a number and returns triple the value.
 2.  Create a function `multiply` that takes two numbers as inputs and returns their product
@@ -148,14 +148,14 @@ var sum = add(7, 12);
 
 ## Looping Functions
 
-#### Exercise 5:
+#### Exercise 4:
 
 Remember while loops?
 
 1.  Write a function called `factoral_of_n` that takes a number and returns the [factoral](//en.wikipedia.org/wiki/Factorial) i.e. `factoral_of_n(5)` should return 120 (5x4x3x2x1).
 2.  Write a function called `count_by_n` that has parameters `count_by` and `count_up_to`, and console.log's the numbers up to `count_up_to` by intervals of `count_by`.
 
-### Exercise 6: FizzBuzz 2 - FizzBuzz Rises
+### Exercise 5: FizzBuzz 2 - FizzBuzz Rises
 
 **Rewrite the below from scratch if you can, try not to reference your previous fizzbuzz code.**
 
@@ -163,7 +163,7 @@ Remember while loops?
 2.  Allow the user to input a `count_up_to` argument
 3.  Allow the user to input `fizz_num` and `buzz_num` arguments to set the word substitutions to multiples of something other than 3 and 5
 
-#### Exercise 7: Fibonacci
+#### Exercise 6: Fibonacci
 
 By definition, the first two numbers in the Fibonacci sequence are 0 and 1, and each subsequent number is the sum of the previous two. For example, the first ten Fibonacci numbers are:
 

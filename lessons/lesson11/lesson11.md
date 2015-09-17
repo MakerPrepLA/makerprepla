@@ -149,7 +149,7 @@ while (i < words.length) {
 1.  Write a function `reverser` which will take an array of values as an input and return a new array of the same values in reverse order.
 2.  Inside `reverser` instantiate a new array `reversedArray`, use a `for` loop to populate it, then return it from the function.
 
-#### Exercise 5: 
+#### Exercise 5:
 
 Write a function `biggestSmallest` that takes an array of numbers as an input, and using a `for` loop, returns an array containing the smallest number in the zeroth position and the largest number in the first position.
 
@@ -220,7 +220,7 @@ var arrayCombiner = function(array1, array2) {}
 var combinedArray = arrayCombiner([1, 2, 3], [4, 5, 6])
 /* should print one array that contains all the values from array1
    and array 2 smooshed together */
-console.log(combinedArray) 
+console.log(combinedArray)
 ```
 
 ### Array.splice()
@@ -241,7 +241,7 @@ console.log("We took out ", removedElements);
 console.log("The remaining array ", frenemies);
 ```
 
-#### Exercise 8: 
+#### Exercise 8:
 
 Write a function `arrayPlucker` that takes an array and an index as inputs and destructively removes the single value at that index. **Return that value.**
 
@@ -484,7 +484,7 @@ Read the documentation for the following string methods, and try to figure out h
 
 ## Nightmare Mode
 
-Copy and paste (**just this one time!**) the code below into an environment that you can run JavaScript in. The code below creates a new class of object called `ArrayLike` that inherits from Array (don't worry if you don't understand this). The only differene is that the following methods have been overwritten:
+Copy and paste (**just this one time!**) the code below into an environment that you can run JavaScript in. The code below creates a new class of object called `ArrayLike` that inherits from Array (don't worry if you don't understand this). The only difference is that the following methods have been overwritten:
 
 1. indexOf
 2. push

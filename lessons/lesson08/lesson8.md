@@ -100,7 +100,7 @@ While loops can be nested inside of each other. Try out this piece of code. What
 ```javascript
 var i = 0;
 var n = 5;
-var j; 
+var j;
 
 while ( i < n ) {
   j = 0 // What happens if we remove this line?
@@ -195,11 +195,11 @@ Write code to play rock, paper, scissors with the user.
 6.  Show them what number was the correct number in the end.
 7.  Use a counter to let them know how many guesses it took them to get the right number.
 
-#### Exercise 11: Interest Rate Calculator
+#### Exercise 10: Interest Rate Calculator
 
 1.  Ask the user for three pieces of information: a starting balance, a target balance, and an interest rate (entered as 0.05 for 5%, for example)
-2.  Use a `while` loop to calculate the number of investment periods required for the starting balance to have grown larger than the target balance
-3.  Set the textContent of a div#output to explain the answer to the user: "To grow an initial investment of $1000 to $2000 at 4.5% will require..."
+2.  Use a `while` loop to calculate the number of years required for the starting balance to have grown larger than the target balance
+3.  Set the textContent of a div#output to explain the answer to the user: "To grow an initial investment of $1000 to $2000 at 4.5% will require ... years"
 
 ## Turn in your work!
 
@@ -220,7 +220,7 @@ while (n < 100) {
   console.log(n);
   n++
 }
-``` 
+```
 
 ```javascript
 var n = 0;
@@ -232,4 +232,3 @@ while (j < 100) {
   }
 }
 ```
-

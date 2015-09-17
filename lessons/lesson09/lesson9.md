@@ -40,11 +40,11 @@ person["job"]; // "Plumber"
 
 #### Exercise 1:
 
-1.  Create a variable called `myCat` and assign to it an empty object
-2.  Assign `myCat` a `name` property, which should hold a string value
-3.  Add an `age` property holding an integer value
-4.  Add an `alive` property holding a boolean value
-5.  Add at least four more properties such as `favoriteToy`, and `nappingSpot`
+Create a variable called `myCat` and assign it these properties (& appropriate values of your choosing):
+1. A `name` property, which should hold a string value
+2. An `age` property holding an integer value
+3. An `isAlive` property holding a boolean value
+4. Add at least two more properties such as `favoriteToy`, and/or `nappingSpot`
 
 **Note:** Because property keys are always string values, quotation marks are optional:
 
@@ -80,21 +80,21 @@ human[property];
 
 property = 'location';
 
-// At what key will we find the value "San Francisco"? 
+// At what key will we find the value "San Francisco"?
 // Test it out to make sure you're right.
 human[property] = 'San Francisco';
 ```
 
 #### Exercise 2:
 
-1.  Create a variable called `myDreamLife` and assign to it an empty object
-2.  Create a variable called `propertyKey` and assign to it the string value `"job"`
-3.  Use the `propertyKey` variable, not the literal string `"job"` to add a `job` property to your dream life object. Hint: `myDreamLife[propertyKey] = 'some job'`
+1.  Create a variable called `myDreamLife` and assign to it an empty object.
+2.  Create a variable called `propertyKey` and assign to it the string value `"job"`.
+3.  Use the `propertyKey` variable, not the literal string `"job"` to add a `job` property to your dream life object. Hint: `myDreamLife[propertyKey] = 'some job'`.
 4.  Create a variable `anotherPropertyKey` and give it a value "salary".
-5.  Use `anotherPropertyKey`, not the literal string `"salary"`, to quantify the value of human life.
+5.  Use `anotherPropertyKey`, not the literal string `"salary"`, to quantify the value of human life (i.e. a salary).
 6.  What does `myDreamLife[propertyKey]` return?
 7.  What does `myDreamLife["job"]` return?
-8.  Assign a string `"car"` to the variable `nextProperty`
+8.  Assign a string `"car"` to the variable `nextProperty`.
 9.  Use the variable `nextProperty` to add your dream car to your dream life object.
 10.  What does `myDreamLife[nextProperty]` return?
 11.  What does `myDreamLife["car"]` return?
@@ -190,7 +190,7 @@ for (var key in obj) {
 #### Exercise 6:
 
 ```javascript
-var politicos = {
+var politicians = {
     secretary_of_state: 'hillary clinton',
     potus: 'barack obama',
     flotus: 'michelle obama',
@@ -199,8 +199,8 @@ var politicos = {
 };
 ```
 
-1.  Loop through the politicos object and concatenate everyones names together, separated by a space. Final result should look something like this: 'hillary clinton barack obama michelle obama joe biden jerry brown'
-2.  Loop through the politicos object again, but this time print the data in the following format: `position: name`. The end result should look like this:
+1.  Loop through the politicians object and concatenate everyone's names together, separated by a space. Final result should look something like this: 'hillary clinton barack obama michelle obama joe biden jerry brown'
+2.  Loop through the politicians object again, but this time print the data in the following format: `position: name`. The end result should look like this:
 
 `secretary_of_state: hillary clinton`
 
@@ -214,10 +214,10 @@ var politicos = {
 
 #### Exercise 7:
 
-1.  Create a new empty object called `reverse_politico_lookup` by iterating over the politicos object and adding each person to the `reverse_politico_lookup` object with their name as a key and their job title as the value. The final object should look something like this:
+1.  Create a new empty object called `reverse_politician_lookup` by iterating over the politicians object and adding each person to the `reverse_politician_lookup` object with their name as a key and their job title as the value. The final object should look something like this:
 
 ```javascript
-var reverse_politico_lookup = {
+var reverse_politician_lookup = {
     'hillary clinton': 'secretary_of_state',
     'barack obama': 'potus',
     'michelle obama': 'flotus',
