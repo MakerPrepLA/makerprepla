@@ -67,7 +67,7 @@ console.log(reduce([1, 2, 3], summer, 0)); // output: 6
 ### Exercise 1: MakerSquare gold coins
 In MakerSquare they have a very strange monetary system.
 Each MakerSquare gold coin has an integer number written on it. A coin n
-can be exchanged in a bank into three coins: n/2, n/3 and n/4 (a coin n can be turned into n/2 + n/3 + n/4 or 13n/12).
+can be exchanged in a bank into three coins: n/2, n/3 and n/4 (a coin n can be turned into n/2 + n/3 + n/4).
 But these numbers are all rounded down (the banks have to make a profit).
 You can also sell MakerSquare coins for American dollars. The exchange
 rate is 1:1. But you can not buy MakerSquare coins.
@@ -75,11 +75,7 @@ If a user enters the value of their MakerSquare coins, what is the maximum amoun
 they can get for them?
 
 #### Sample Input:
-How many MakerSquare gold coins would you like to trade in? // 2
-
-What is your next coin worth? // 12
-
-What is your next coin worth? // 2
+Enter the MKS coins you wish to convert to USD separated by spaces.
 
 #### Sample Output:
 Your 12 MakerSquare coin translates to 13 American dollar(s).
@@ -88,7 +84,7 @@ Your 2 MakerSquare coin translates to 1 American dollar(s).
 
 #### Explanation:
 You can change 12 into 6, 4 and 3, and then change these into
-$6+$4+$3 = $13.
+$6 + $4 + $3 = $13.
 
 If you try changing the coin 2 into 3 smaller coins, you will get
 1, 0 and 0, and later you can get no more than $1 out of them.
@@ -96,8 +92,8 @@ If you try changing the coin 2 into 3 smaller coins, you will get
 It is better just to change the 2 coin directly into $2.
 
 #### Implementation:
-* Use a prompt to ask the user how many coins they wish to exchange.
-* Prompt the user to enter the coins they wish to exchange and save these in an array.
+* Prompt the user to enter the coins they wish to exchange separated by spaces.
+* Convert the return from that prompt into an array containing only numbers.
 * Use ‘map’ (the one you created earlier) to iterate over the array and produce a new array of the converted values of the coins.
 * Tell the user what their MakerSquare gold coins convert to.
 
