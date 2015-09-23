@@ -107,23 +107,16 @@ function summer(accumulatedValue, currentValue) {
 console.log(reduce([1, 2, 3], summer, 0)); // result: 6
 ```
 
-
-### Exercise 1: MakerSquare gold coins
+### Exercise 1: Contains?
 ```javascript
-var coins = prompt("Enter the MKS coins you wish to convert to USD separated by  spaces.");
-coins = coins.split(' ');
-
-var sum;
-var dollars = map(coins, function (coin) {
-  var half = Math.floor(coin / 2);
-  var third = Math.floor(coin / 3);
-  var fourth = Math.floor(coin / 4);
-  sum = half + third + fourth;
-  return sum;
-});
-
-for (var i = 0; i < coins.length; i++) {
-  console.log("Your " + coins[i] + " MakerSquare coin translates to " + dollars[i] + " American dollar(s).");
+function contains(collection, target){
+   return reduce(collection,function(accum, val){
+       if(val === target){
+           return true;
+       } else {
+           return accum;
+       }
+   } ,false);
 }
 ```
 
@@ -141,48 +134,56 @@ var filtered = filter(arrInput, hasHole);
 console.log("There are " + filtered.length + " hole(s) in your input: " + filtered.join(", "));
 ```
 
-### Exercise 3: The Next Palindrome
+### Exercise 3: MakerSquare gold coins
 ```javascript
-var number = prompt("How many numbers will you test?");
+var coins = prompt("Enter the MKS coins you wish to convert to USD separated by spaces.");
+coins = coins.split(' ');
 
-var numbers = [];
-for (var i = 0; i < number; i++) {
-  numbers.push(parseInt(prompt("Please enter the next number.")));
-}
-
-var results = map(numbers, function(number) {
-  return getPalindrome(number);
+var sum;
+var dollars = map(coins, function (coin) {
+  var half = Math.floor(coin / 2);
+  var third = Math.floor(coin / 3);
+  var fourth = Math.floor(coin / 4);
+  sum = half + third + fourth;
+  return sum;
 });
 
-function getPalindrome(number) {
-  number++;
-  while (true) {
-    if (isPalindrome(number)) {
-      return number;
-    } else {
-      number++;
-    }
-  }
-}
-
-function isPalindrome(number) {
-  return number == number.toString().split("").reverse().join("");
-}
-
-for (var i = 0; i < numbers.length; i++) {
-  console.log("The smallest palindrome larger than " + numbers[i] + " is " + results[i] + ".");
+for (var i = 0; i < coins.length; i++) {
+  console.log("Your " + coins[i] + " MakerSquare coin translates to " + dollars[i] + " American dollar(s).");
 }
 ```
 
-### Exercise 4: Closing the Tweets
+### Exercise 4: The Next Palindrome
+```javascript
+var numbers = prompt("Please enter your numbers separated by spaces");
+
+numbers = numbers.split(" ");
+
+var palindromes = map(numbers, getPalindrome);
+
+function getPalindrome(num) {
+  num++;
+
+  while (!isPalindrome(num)) {
+    num++;
+  }
+  return num;
+
+}
+
+function isPalindrome(input) {
+  return input === parseInt(input.toString().split("").reverse().join(""));
+}
+
+for (var i = 0; i < numbers.length; i++) {
+  console.log("The smallest palindrome larger than " + numbers[i] + " is " +  palindromes[i] + ".");
+}
+```
+
+### Exercise 5: Closing the Tweets
 ```javascript
 var numberOfTweets = prompt("How many tweets are there?");
-var numberOfClicks = prompt("How many clicks will be made?");
-
-var postClicks = [];
-for (var i = 0; i < numberOfClicks; i++) {
-  postClicks.push(prompt("Which tweet would you like to click on? Enter 'c' for 'close all' or 'o' for 'open all'"));
-}
+var postClicks = prompt("Please enter the tweets you would like to click on separated by spaces. Enter 'c' to 'close all' or 'o' to 'open all'");
 
 var tweets = createEmptyArray(numberOfTweets);
 
