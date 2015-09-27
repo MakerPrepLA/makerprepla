@@ -62,18 +62,10 @@ function summer(previousValue, currentValue) {
 }
 console.log(reduce([1, 2, 3], summer, 0)); // output: 6
 ```
+
 ## Exercises:
 
-### Exercise 1: Contains?
-Write a `contains` function that returns whether or not something is contained in a collection.
-
-#### Implementation:
-* Use _your_ reduce function inside your `contains` function.
-* Hint: remember which variables you have at your disposal.
-
----
-
-### Exercise 2: Holes in the text
+### Exercise 1: Holes in the text
 Johnny wrote some text on a piece of paper and now he wants to know how many holes are in the text. What is a hole? If you think of the paper as the plane and a letter as a curve on the plane, then each letter divides the plane into regions. For example letters "A", "D", "O", "P", "R" divide the plane into two regions so we say these letters each have one hole. Similarly, letter "B" has two holes and letters such as "C", "E", "F", "K" have no holes. Today we will be treating “B” as if it only had one hole. We say that the number of holes in the text is equal to the total number of holes in the letters of the text. Help Johnny to determine how many holes are in the text.
 
 #### Sample Input:
@@ -89,12 +81,38 @@ There are 5 hole(s) in your input: a, a, g, a, b
 #### Implementation:
 * Prompt the user to enter a sentence.
 * Create a ‘hasHole’ function that has a ‘letter’ parameter and returns whether the letter contains a ‘hole’ or not.
-* Use filter (the function you created earlier) in combination with your ‘hasHole’ function to create a new array containing the letters with ‘holes’ in them.
+* Use _your_ filter in combination with your ‘hasHole’ function to create a new array containing the letters with ‘holes’ in them.
 * Print the number of holes in the string as well as what these ‘holy’ letters are.
 
 ---
 
-### Exercise 3: MakerSquare gold coins
+### Exercise 2: Sidekicks & Super Heroes
+```javascript
+var sidekicks = [
+    {name: "Robin",           hero: "Batman"   },
+    {name: "Supergirl",       hero: "Superman" },
+    {name: "Fatman",          hero: "Mister America"},
+    {name: "Oracle",          hero: "Batman"   },
+    {name: "Doiby Dickles",   hero: "Green Lantern" },
+    {name: "BatGirl",         hero: "Batman"},
+    {name: "Pieface",         hero: "Green Lantern" }
+];
+```
+a. Use _your_ filter function on the 'sidekicks' array and return any sidekick whose hero is 'Batman'.
+
+b. Use _your_ map function combined with _your_ filter function to return only the names of the sidekicks whose heroes are 'Green Lantern'.
+
+---
+
+### Exercise 3: Contains?
+Write a `contains` function that returns whether or not something is contained in a collection.
+
+#### Implementation:
+* Use _your_ reduce function inside _your_ `contains` function.
+* Hint: remember which variables you have at your disposal.
+---
+
+### Exercise 4: MakerSquare gold coins
 In MakerSquare they have a very strange monetary system.
 Each MakerSquare gold coin has an integer number written on it. A coin n
 can be exchanged in a bank into three coins: n/2, n/3 and n/4 (a coin n can be turned into n/2 + n/3 + n/4).
@@ -124,17 +142,17 @@ It is better just to change the 2 coin directly into $2.
 #### Implementation:
 * Prompt the user to enter the coins they wish to exchange.
 * Convert the return from that prompt into an array containing only numbers.
-* Use ‘map’ (the one you created earlier) to iterate over the array and produce a new array of the converted values of the coins.
+* Use _your_ map function to iterate over the array and produce a new array of the converted values of the coins.
 * Tell the user what their MakerSquare gold coins convert to.
 
 ---
 
-### Exercise 4: The Next Palindrome
+### Exercise 5: The Next Palindrome
 A positive integer is called a palindrome if its representation in the decimal system is the same when read from left to right and from right to left. For a given positive integer K of not more than 1000000 digits, write the value of the smallest palindrome larger than K to output. Numbers are always displayed without leading zeros.
 
 #### Implementation:
 * Prompt the user to enter their test numbers.
-* Use your 'map' function (the one you created earlier) to iterate over the elements of the array and return the smallest palindrome larger than the current number.
+* Use _your_ map function to iterate over the elements of the array and return the smallest palindrome larger than the current number.
 * It may help to create a function to test if a number is a palindrome or return the smallest palindrome larger than the number.
 
 #### Sample Input:
@@ -149,7 +167,7 @@ The smallest palindrome larger than 2133 is 2222.
 
 ---
 
-### Exercise 5: Closing the Tweets
+### Exercise 6: Closing the Tweets
 Little kids, Jack and Evan like playing their favorite game Glass-and-Stone. Today they want to play something new and came across Twitter on their father's laptop.
 They saw it for the first time but were already getting bored to see a bunch of sentences having at most 140 characters each. The only thing they liked to play with it is, closing and opening tweets.
 
@@ -158,7 +176,7 @@ There are N tweets on the page and each tweet can be opened by clicking on it, t
 #### Sample Input:
 How many tweets are there? // 3
 
-Which tweet(s) would you like to click on? Enter 'c' for 'close all' or 'o' for 'open all'. Separate each 'click' with a space. // 1 2 3 2 c 1 
+Which tweet(s) would you like to click on? Enter 'c' for 'close all' or 'o' for 'open all'. Separate each 'click' with a space. // 1 2 3 2 c 1
 
 #### Sample Output:
 Tweets: 1, 0, 0
@@ -200,3 +218,8 @@ CLICK 1 : { 1, 0, 0 }, open count = 1
 * Create a function `getCount` that takes an array as a parameter and using `reduce` (the function you created earlier) returns the sum of the array. This is to find out how many tweets are open.
 
 * Log which tweets are open (in array format).
+
+---
+
+### Exercise 7: Alphabet Soup
+Create a function `alphabetSoup(str)` that takes the `str` string parameter being passed and return the string with the letters in alphabetical order (ie. 'hello' becomes 'ehllo'). Because this isn't hard enough I want you to use _your_ reduce function inside your alphabetSoup function. Assume numbers and punctuation symbols will not be included in the string.

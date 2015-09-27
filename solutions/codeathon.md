@@ -107,20 +107,7 @@ function summer(accumulatedValue, currentValue) {
 console.log(reduce([1, 2, 3], summer, 0)); // result: 6
 ```
 
-### Exercise 1: Contains?
-```javascript
-function contains(collection, target){
-   return reduce(collection,function(accum, val){
-       if(val === target){
-           return true;
-       } else {
-           return accum;
-       }
-   } ,false);
-}
-```
-
-### Exercise 2: Holes in the text
+### Exercise 1: Holes in the text
 ```javascript
 var input = prompt("Please enter your string.");
 var arrInput = input.split("");
@@ -134,7 +121,35 @@ var filtered = filter(arrInput, hasHole);
 console.log("There are " + filtered.length + " hole(s) in your input: " + filtered.join(", "));
 ```
 
-### Exercise 3: MakerSquare gold coins
+### Exercise 2: Sidekicks & Super Heroes
+```javascript
+// a. Use _your_ filter function on the 'sidekicks' array and return any sidekick whose hero is 'Batman'.
+console.log(filter(sidekicks, function(currentEl) {
+  return currentEl.hero === "Batman";
+}));
+
+// b. Use _your_ map function combined with _your_ filter function to return only the names of the sidekicks whose heroes are 'Green Lantern'.
+console.log(map(filter(sidekicks, function(currentEl) {
+  return currentEl.hero === "Green Lantern";
+}), function(currentEl) {
+  return currentEl.name;
+}));
+```
+
+### Exercise 3: Contains?
+```javascript
+function contains(collection, target){
+  return reduce(collection,function(accum, currentEl){
+    if(currentEl === target){
+      return true;
+    } else {
+      return accum;
+    }
+  }, false);
+}
+```
+
+### Exercise 4: MakerSquare gold coins
 ```javascript
 var coins = prompt("Enter the MKS coins you wish to convert to USD separated by spaces.");
 coins = coins.split(' ');
@@ -153,11 +168,11 @@ for (var i = 0; i < coins.length; i++) {
 }
 ```
 
-### Exercise 4: The Next Palindrome
+### Exercise 5: The Next Palindrome
 ```javascript
 var numbers = prompt("Please enter your numbers separated by spaces");
 
-numbers = numbers.split(" ");
+numbers = numbers.split(' ');
 
 var palindromes = map(numbers, getPalindrome);
 
@@ -180,7 +195,7 @@ for (var i = 0; i < numbers.length; i++) {
 }
 ```
 
-### Exercise 5: Closing the Tweets
+### Exercise 6: Closing the Tweets
 ```javascript
 var numberOfTweets = prompt("How many tweets are there?");
 var postClicks = prompt("Please enter the tweets you would like to click on separated by spaces. Enter 'c' to 'close all' or 'o' to 'open all'");
@@ -232,4 +247,34 @@ function createEmptyArray(sizeOfArray) {
 
 console.log("Tweets: " + tweets);
 console.log(getCount(tweets) + " tweet(s) are open");
+```
+
+
+### Exercise 7:
+```javascript
+function alphabetSoup(str) {
+
+  return reduce(str, function(accum, currentEl){
+
+    // for the first iteration
+    if (accum === "") {
+      return currentEl;
+    }
+
+    for (var i = 0; i < accum.length; i++) {
+      if (currentEl < accum[i]) { // insert currentEl before accum[i]
+        accum = [accum.slice(0, i) + currentEl + accum.slice(i)].join("");
+        return accum;
+      }
+    }
+
+    // if currentEl is > any letter in accum append it to the end of accum
+    return accum += currentEl;
+
+  }, "");
+
+}
+
+var soup = alphabetSoup("hello");
+console.log(soup); // ehllo
 ```
