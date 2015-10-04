@@ -458,10 +458,8 @@ var unscrambledArray = [];
 
 // 3.  While the length of `scrambledArray` is greater than 0, remove the FIRST and LAST value and add them to `unscrambledArray`.
 while (scrambledArray.length > 0) {
-  var first = scrambledArray.shift();
-  var last = scrambledArray.pop();
- unscrambledArray.push(first);
- unscrambledArray.push(last);
+  var first = scrambledArray.shift(), last = scrambledArray.pop();
+  unscrambledArray.push(first, last);
 }
 
 // 4.  Turn the values in `unscrambledPoem` into a string by using the array's native `.join()` method.
