@@ -6,7 +6,7 @@ Here is some normal text. A paragraph, even!
 
 ## Headings
 
-# before a line makes it a header.
+`#`s (octothorps) before a line makes text a header.
 
 ## The more #'s, the smaller the header.
 
@@ -14,13 +14,24 @@ Here is some normal text. A paragraph, even!
 
 ###### Quite small
 
+Question: What's the smallest header we can have?
+
+
+Note: Some headings automatically have a horizontal rule after them, can you figure out which ones?
+
+To insert horizontal rules, enter 3 or more hyphens, asterisks, or underscores.
+
+---
+***
+___
+
 ## Styling Text
 
-*Surrounding text with astericks renders it in italics*
+*Surrounding text with asterisks renders it in italics*
 
-**Surrounding text with two astericks renders it in bold**
+**Surrounding text with two asterisks renders it in bold**
 
-***Surrounding text with three astericks renders it in bold and italics*** 
+***Surrounding text with three asterisks renders it in bold and italics***
 
 ~~Surrounding text with tildes (squigglies) renders it with a strikethrough.~~
 
@@ -28,7 +39,7 @@ Sometimes you want to embed some \*stylized text\* right into **your paragraph.*
 
 ## Lists
 
-Asterickss can be used to define unordered lists
+Asterisks can be used to define unordered lists
 
 * Item
 * Item
@@ -71,7 +82,7 @@ Backticks are used to denote code blocks
 
  And they can be used `console.log('Hello world!')` in-line as well.
 
-Links and Embedded Images 
+Links and Embedded Images
 ---
 
 [I'm a link to a web page! Click here for a more comprehensive list of markdown features](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
