@@ -16,6 +16,15 @@ var name = "Brandy";
 var myName = name;
 var age = x;
 
+// concatination vs addition
+var firstName = "Jacob";
+var lastName = "Hansen";
+console.log(firstName + " " + lastName); // Jacob Hansen
+
+console.log(9 + 12); // 21
+console.log("9" + 12); // 912
+console.log("9" * 12); // NaN
+
 // mathematical operators
 x = x + 12; /* is the same as: */ x += 12;
 x = x - 12; /* is the same as: */ x -= 12;
@@ -30,7 +39,16 @@ x--;
 ++x;
 --x;
 
-// to `escape` 
+// to `escape` use backslash
+console.log("This text\'s quotes will \"display\""); // This text's quotes will "display"
+
+// convert numbers to strings and vice versa
+// parseInt()
+var age = "29";
+var numberAge = parseInt(age);
+
+// String()
+var stringAge = String(numberAge);
 
 // --------------------------------------------------------------------
 // Popup Boxes:
@@ -44,7 +62,7 @@ var accept = confirm("Do you agree you are above 18?");
 var userName = prompt("What is your name?");
 
 // --------------------------------------------------------------------
-// Selectors:
+// DOM Manipulation:
 // --------------------------------------------------------------------
 // to 'get' element from DOM:
 document.querySelector('*selector*');
@@ -61,9 +79,28 @@ myDiv.textContent = "This will overwrite previous content.";
 // another way to do it with 'injecting' html:
 myDiv.innerHTML = "<h1>This will overwrite previous content AND be a heading!</h1><p>Add as many tags as you like!</p>";
 
+// you can also alter CSS
+myDiv.style.backgroundColor = "purple";
+myDiv.style.border = "2px solid blue";
+
+
 // --------------------------------------------------------------------
-// 
+// Conditional Logic Flow
 // --------------------------------------------------------------------
+
+// predicates are anything that can be resolved to either `true` or `false`
+// i.e. 5 > 1, "this" === "that", true
+
+// syntax:
+if (predicate) {
+  // code to run if predicate resolves to `true`
+}
+
+// example:
+var password = "rubberduckie";
+if (password === "rubberduckie") {
+  
+}
 
 // --------------------------------------------------------------------
 // 
