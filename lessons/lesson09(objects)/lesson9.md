@@ -40,7 +40,7 @@ person["job"]; // "Plumber"
 
 #### Exercise 1:
 
-Create an Object called `myCat` and assign it these properties (& appropriate values of your choosing):
+Create a variable called `myCat` and assign it these properties (& appropriate values of your choosing):
 1. A `name` property, which should hold a string value
 2. An `age` property holding an integer value
 3. An `isAlive` property holding a boolean value

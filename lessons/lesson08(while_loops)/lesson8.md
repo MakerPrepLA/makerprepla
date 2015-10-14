@@ -131,7 +131,7 @@ If its getting late, don't spend too much time worrying about how to format the 
 1. 1
 2. 2,1
 3. 3,1,2
-4. 1,2,3
+4. 4,1,2,3
 5. 5,1,2,3,4
 
 ## The **Math** object (Don't worry if you don't make it through all of this section)

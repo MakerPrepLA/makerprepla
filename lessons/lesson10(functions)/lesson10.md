@@ -31,7 +31,7 @@ The above is a function that creates side effects when run. The function's side 
 #### Exercise 1:
 
 1.  Define a function that console.logs a simple message and the time: `new Date()`
-2.  Invoke your function multiple times.
+2.  Invoke your function multiple times from the console.
 3.  Place your function in a script tag in an HTML document.
 4.  Invoke it multiple times in the script tag.
 5.  Open the HTML document in your browser and hit reload a few times.
