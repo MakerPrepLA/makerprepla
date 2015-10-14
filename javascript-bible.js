@@ -99,8 +99,20 @@ if (predicate) {
 // example:
 var password = "rubberduckie";
 if (password === "rubberduckie") {
-  
+  console.log("Correct password.");
+} else if (password === "rubberduck") {
+  console.log("Almost correct password.");
+} else {
+  console.log("Incorrect password");
 }
+
+// ternary operator:
+// syntax:
+// predicate ? 'if true, this will run' : 'if false, this will run'
+
+// example:
+var isMember = true;
+var feePrompt = "The fee is " + (isMember ? "$2.00" : "$10.00"); // The fee is $2.00
 
 // --------------------------------------------------------------------
 // 
