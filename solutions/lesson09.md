@@ -1,4 +1,4 @@
-### Exercise 1:
+### Exercise 1: 
 ```javascript
 // 1. Create a variable called myCat and assign to it an empty object
 var myCat = {};

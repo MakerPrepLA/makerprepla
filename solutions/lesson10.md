@@ -1,4 +1,4 @@
-### Exercise 1:
+### Exercise 1: 
 ```javascript
 // 1.  Define a function that console.logs a simple message and the time: `new Date()`
 function messageAndDate() {
