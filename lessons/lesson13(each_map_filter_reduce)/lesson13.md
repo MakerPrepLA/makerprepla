@@ -73,7 +73,7 @@ var mice = [
   {name: "Sharpteeth"},
   {name: "Smellypee"},
   {name: "Twinkle Fingers"}
-]
+];
 ```
 
 ## filter
@@ -90,6 +90,23 @@ function filter(collection, predicate) {
   return results;
 }
 ```
+
+### Exercise 5
+
+a. Christoph and Gabriel are starting a club but the only people who are invited are people with names longer than 6 characters. Use **your filter** function to tell which `people` are allowed in their club.
+
+```javascript
+var people = ["Monica", "Erica", "Rita", "Tina", "Sandra", "Mary", "Jessica"];
+```
+
+b. Tom and Neil got jealous that they couldn't get into Christoph and Gabriel's club so they decided to start their own club but only let people in whose names (in ascii numbers) are less than 400. 
+
+Note: To translate a character to ascii: `"A".charCodeAt(0); // 65`
+
+Note: To translate ascii number to character(s): `String.fromCharCode(97); // a`
+`String.fromCharCode(74, 111, 121); // Joy`
+
+Use your **your filter** function to tell which `people` are allowed in *their* club.
 
 ## reduce
 ```javascript
@@ -112,4 +129,14 @@ function reduce(collection, callbackFunction, initialValue) {
 
   return accumulator;
 }
+```
+
+a. Use **your reduce** function to find the factorial of a number.
+
+b. Zoe and Jane want to conduct a test to see who at MakerPrep has the fastest laptop processor. Use **your reduce** function to figure out which student has the fastest processor, but in the end. Extra credit: Display it in GHz instead of Hz.
+
+```javascript
+var processorSpeedsInHZ = [
+  2000000000, 2600000000, 2300000000, 2500000000, 2200000000, 10
+];
 ```
