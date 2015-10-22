@@ -25,7 +25,7 @@ function each(collection, callbackFunction) {
 }
 ```
 
-### Exercise 2
+### Exercise 3
 
 a. Use **your each** function to iterate over `myObj` and log each value but with an octothorpe before it:
 
@@ -58,7 +58,7 @@ function map(collection, callbackFunction) {
 }
 ```
 
-### Exercise 3
+### Exercise 4
 a. Use **your map** function to create a new array containing the square root of each element in `numbersR`.
 
 ```javascript
