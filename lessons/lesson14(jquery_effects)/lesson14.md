@@ -1,5 +1,7 @@
 # Lesson 14: jQuery
 
+![firebase](resources/jquery.png)
+
 **NOTE:** JQuery makes frequent use of query selectors. You can refer back to this [query selector reference](../../resources/query_selector_reference.md) if you forgot how to use them.
 
 jQuery is a library (a bunch of pre-written code), written in JavaScript, designed to make it easier to manipulate a web page and do various web-related work.
