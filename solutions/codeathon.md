@@ -1,225 +1,280 @@
-# MakerPrep Codeathon
-This codeathon will prepare you for the MakerSquare immersive interview. If you can complete all of these exercises then you are well on your way to becoming accepted into MakerSquare.
-
-## Prep:
-
+### Prep
 ### each
- * Implement JavaScript’s native ‘forEach’ method that takes two arguments (a collection and a callback function) and iterates over the collection using a ‘for’ loop and ‘for in’ loop and applies the callback function. This time we will call the function ‘each’ instead of ‘forEach’ and be sure to check if the collection is an array or an object. Use this as a template:
+
 ```javascript
-function each(collection, callback) {
-    // insert code here
+function each(collection, callbackFunction) {
+
+  var isArray = Array.isArray(collection);
+
+  if (isArray) {
+    for (var i = 0; i < collection.length; i++) {
+      callbackFunction(collection[i]);
+    }
+  } else {
+    for (var key in collection) {
+      callbackFunction(collection[key]);
+    }
+  }
+
 }
 ```
-Test it with:
+
+To test each:
+
 ```javascript
 var logger = function (input) {
   console.log(input);
 };
-each([1, 2, 3], logger); // output: 1, 2, 3
+each([1, 2, 3], logger); // result: 1 \n 2 \n 3
 ```
 
 ### map
-* Implement JavaScript’s native ‘map’ method that  takes two arguments (a collection and a callback function) and iterates over the collection using the ‘each’ function you wrote earlier and returns the resultant array. Use this as a template:
+
 ```javascript
-function map(collection, callback) {
-    // insert code here
+function map(collection, callbackFunction) {
+  var results = [];
+
+  each(collection, function(currentEl) {
+    results.push(callbackFunction(currentEl));
+  });
+
+  return results;
 }
 ```
-	Test it with:
+
+To test map:
+
 ```javascript
 var incrementor = function(currentEl){
-    return currentEl + 1;
+  return currentEl + 1;
 };
-console.log([1, 2, 3].map(incrementor)); // output: [2, 3, 4]
+console.log(map([1, 2, 3], incrementor)); // result: 2, 3, 4
 ```
 
 ### filter
-* Implement JavaScript’s native ‘filter’ method that  takes two arguments (a collection and a predicate (a function that returns either a ‘true’ or a ‘false’)) and iterates over the collection using the ‘each’ function you wrote earlier and returns the resultant array. Use this as a template:
 ```javascript
 function filter(collection, predicate) {
-    // insert code here
+  var results = [];
+
+  each(collection, function(currentEl) {
+    if (predicate(currentEl)) {
+      results.push(currentEl);
+    }
+  });
+
+  return results;
 }
 ```
-Test it with:
+
+To test filter:
+
 ```javascript
 function returnOdds(currentEl) {
-	 return currentEl % 2 !== 0;
+  return currentEl % 2 !== 0;
 }
-console.log(filter([1, 2, 3], returnOdds)); // output: 1, 3
+console.log(filter([1, 2, 3], returnOdds)); // result: 1, 3
 ```
 
 ### reduce
-* Implement JavaScript’s native ‘reduce’ method that  takes three arguments (a collection, a callback, and a start value) and returns the accumulatedValue. Use this as a template:
 ```javascript
-function reduce(collection, callback, startValue) {
-    // insert code here
+function reduce(collection, callbackFunction, initialValue) {
+  var accumulator, index;
+
+  // check if initialValue exists
+  if (arguments.length >= 3) {
+    accumulator = initialValue;
+    index = 0;
+  } else {
+    accumulator = collection[0];
+    index = 1;
+  }
+
+  while (index < collection.length) {
+    accumulator = callbackFunction(accumulator, collection[index]);
+    index++;
+  }
+
+  return accumulator;
 }
-```
-Test it with:
-```javascript
-function summer(previousValue, currentValue) {
-    return previousValue + currentValue;  
-}
-console.log(reduce([1, 2, 3], summer, 0)); // output: 6
 ```
 
-## Exercises:
+To test reduce:
+
+```javascript
+function summer(accumulatedValue, currentValue) {
+  return accumulatedValue + currentValue;  
+}
+console.log(reduce([1, 2, 3], summer, 0)); // result: 6
+```
 
 ### Exercise 1: Holes in the text
-Johnny wrote some text on a piece of paper and now he wants to know how many holes are in the text. What is a hole? If you think of the paper as the plane and a letter as a curve on the plane, then each letter divides the plane into regions. For example letters "A", "D", "O", "P", "R" divide the plane into two regions so we say these letters each have one hole. Similarly, letter "B" has two holes and letters such as "C", "E", "F", "K" have no holes. Today we will be treating “B” as if it only had one hole. We say that the number of holes in the text is equal to the total number of holes in the letters of the text. Help Johnny to determine how many holes are in the text.
+```javascript
+var input = prompt("Please enter your string.");
+var arrInput = input.split("");
 
-#### Sample Input:
-Bonanza.
+function hasHole(letter) {
+  return letter === 'a' || letter === 'A' || letter === 'b' || letter === 'B' || letter === 'd' || letter === 'D' || letter === 'e' || letter === 'g' || letter === 'o' || letter === 'O' || letter === 'p' || letter === 'P' || letter === 'q' || letter === 'Q';
+}
 
-Sally caught crabs.
+var filtered = filter(arrInput, hasHole);
 
-#### Sample Output:
-There are 4 hole(s) in your input: B, o, a, a
-
-There are 5 hole(s) in your input: a, a, g, a, b
-
-#### Implementation:
-* Prompt the user to enter a sentence (or just hard-code the sentence).
-* Create a `hasHole` function that has a ‘letter’ parameter and returns whether the letter contains a ‘hole’ or not.
-* Use _your_ filter in combination with your `hasHole` function to create a new array containing the letters with ‘holes’ in them.
-* Print the number of holes in the string as well as what these ‘holy’ letters are.
-
----
+console.log("There are " + filtered.length + " hole(s) in your input: " + filtered.join(", "));
+```
 
 ### Exercise 2: Sidekicks & Super Heroes
 ```javascript
-var sidekicks = [
-    {name: "Robin",           hero: "Batman"   },
-    {name: "Supergirl",       hero: "Superman" },
-    {name: "Fatman",          hero: "Mister America"},
-    {name: "Oracle",          hero: "Batman"   },
-    {name: "Doiby Dickles",   hero: "Green Lantern" },
-    {name: "BatGirl",         hero: "Batman"},
-    {name: "Pieface",         hero: "Green Lantern" }
-];
+// a. Use _your_ filter function on the 'sidekicks' array and return any sidekick whose hero is 'Batman'.
+console.log(filter(sidekicks, function(currentEl) {
+  return currentEl.hero === "Batman";
+}));
+
+// b. Use _your_ map function combined with _your_ filter function to return only the names of the sidekicks whose heroes are 'Green Lantern'.
+console.log(map(filter(sidekicks, function(currentEl) {
+  return currentEl.hero === "Green Lantern";
+}), function(currentEl) {
+  return currentEl.name;
+}));
 ```
-a. Use _your_ filter function on the `sidekicks` array and return any sidekick whose hero is 'Batman'.
-
-b. Use _your_ map function combined with _your_ filter function to return only the names of the sidekicks whose heroes are 'Green Lantern'.
-
----
 
 ### Exercise 3: Contains?
-Write a `contains` function that returns whether or not something is contained in a collection.
-
-#### Implementation:
-* Use _your_ reduce function inside _your_ `contains` function.
-* Hint: remember which variables you have at your disposal.
----
+```javascript
+function contains(collection, target){
+  return reduce(collection,function(accum, currentEl){
+    if(currentEl === target){
+      return true;
+    } else {
+      return accum;
+    }
+  }, false);
+}
+```
 
 ### Exercise 4: MakerSquare gold coins
-In MakerSquare they have a very strange monetary system.
-Each MakerSquare gold coin has an integer number written on it. A coin n
-can be exchanged in a bank into three coins: n/2, n/3 and n/4 (a coin n can be turned into n/2 + n/3 + n/4).
-But these numbers are all rounded down (the banks have to make a profit).
-You can also sell MakerSquare coins for American dollars. The exchange
-rate is 1:1. But you can not buy MakerSquare coins.
-If a user enters the value of their MakerSquare coins, what is the maximum amount of American dollars
-they can get for them?
+```javascript
+var coins = prompt("Enter the MKS coins you wish to convert to USD separated by spaces.");
+coins = coins.split(' ');
 
-#### Sample Input:
-Enter the MKS coins you wish to convert to USD separated by spaces. // 12 2
+var sum;
+var dollars = map(coins, function (coin) {
+  var half = Math.floor(coin / 2);
+  var third = Math.floor(coin / 3);
+  var fourth = Math.floor(coin / 4);
+  sum = half + third + fourth;
+  return sum;
+});
 
-#### Sample Output:
-Your 12 MakerSquare coin translates to 13 American dollar(s).
-
-Your 2 MakerSquare coin translates to 1 American dollar(s).
-
-#### Explanation:
-You can change 12 into 6, 4 and 3, and then change these into
-$6 + $4 + $3 = $13.
-
-If you try changing the coin 2 into 3 smaller coins, you will get
-1, 0 and 0, and later you can get no more than $1 out of them.
-
-It is better just to change the 2 coin directly into $2.
-
-#### Implementation:
-* Prompt the user to enter the coins they wish to exchange (or just hard-code it).
-* Convert the return from that prompt into an array containing only numbers.
-* Use _your_ map function to iterate over the array and produce a new array of the converted values of the coins.
-* Tell the user what their MakerSquare gold coins convert to.
-
----
+for (var i = 0; i < coins.length; i++) {
+  console.log("Your " + coins[i] + " MakerSquare coin translates to " + dollars[i] + " American dollar(s).");
+}
+```
 
 ### Exercise 5: The Next Palindrome
-A positive integer is called a palindrome if its representation in the decimal system is the same when read from left to right and from right to left. For a given positive integer K of not more than 1000000 digits, write the value of the smallest palindrome larger than K to output. Numbers are always displayed without leading zeros.
+```javascript
+var numbers = prompt("Please enter your numbers separated by spaces");
 
-#### Implementation:
-* Prompt the user to enter their test numbers (or just hard-code them).
-* Use _your_ map function to iterate over the elements of the array and return the smallest palindrome larger than the current number.
-* It may help to create a function to test if a number is a palindrome or return the smallest palindrome larger than the number.
+numbers = numbers.split(' ');
 
-#### Sample Input:
+var palindromes = map(numbers, getPalindrome);
 
-Please enter your numbers separated by spaces. // 808 2133
+function getPalindrome(num) {
+  num++;
 
-#### Sample Output:
+  while (!isPalindrome(num)) {
+    num++;
+  }
+  return num;
 
-The smallest palindrome larger than 808 is 818.
+}
 
-The smallest palindrome larger than 2133 is 2222.
+function isPalindrome(input) {
+  return input === parseInt(input.toString().split("").reverse().join(""));
+}
 
----
+for (var i = 0; i < numbers.length; i++) {
+  console.log("The smallest palindrome larger than " + numbers[i] + " is " +  palindromes[i] + ".");
+}
+```
 
 ### Exercise 6: Closing the Tweets
-Little kids, Jack and Evan like playing their favorite game Glass-and-Stone. Today they want to play something new and came across Twitter on their father's laptop.
-They saw it for the first time but were already getting bored to see a bunch of sentences having at most 140 characters each. The only thing they liked to play with it is, closing and opening tweets.
+```javascript
+var numberOfTweets = prompt("How many tweets are there?");
+var postClicks = prompt("Please enter the tweets you would like to click on separated by spaces. Enter 'c' to 'close all' or 'o' to 'open all'");
 
-There are N tweets on the page and each tweet can be opened by clicking on it, to see some statistics related to that tweet. Initially all the tweets are closed. Clicking on an open tweet closes it and clicking on a closed tweet opens it. There is also a button to close all the open tweets. Given a sequence of K clicks by Jack, Evan has to guess the total number of open tweets just after each click. Please help Evan in this game.
+var tweets = createEmptyArray(numberOfTweets);
 
-#### Sample Input:
-How many tweets are there? // 3
+each(postClicks, function (click) {
+  if (click === "o") {
+    tweets = allOpen(tweets);
+  } else if (click === "c") {
+    tweets = allClosed(tweets);
+  } else {
+    if (tweets[click - 1] === 0) {
+      tweets[click - 1] = 1;
+    } else {
+      tweets[click - 1] = 0;
+    }
+  }
+});
 
-Which tweet(s) would you like to click on? Enter 'c' for 'close all' or 'o' for 'open all'. Separate each 'click' with a space. // 1 2 3 2 c 1
+function getCount(arr) {
+  var count = reduce(arr, function (previousValue, currentValue) {
+    return previousValue + currentValue;
+  }, 0);
+  return count;
+}
 
-#### Sample Output:
-Tweets: 1, 0, 0
+function allOpen(arr) {
+  var toReturn = map(arr, function (post) {
+    return 1;
+  });
+  return toReturn;
+}
 
-1 tweet(s) are open
+function allClosed(arr) {
+  var toReturn = map(arr, function (post) {
+    return 0;
+  });
+  return toReturn;
+}
+
+function createEmptyArray(sizeOfArray) {
+  var toReturn = [];
+  for (var i = 0; i < sizeOfArray; i++) {
+    toReturn[i] = 0;
+  }
+  return toReturn;
+}
+
+console.log("Tweets: " + tweets);
+console.log(getCount(tweets) + " tweet(s) are open");
+```
 
 
-#### Explanation:
-Let open[x] = 1 if the xth tweet is open and 0 if its closed.
+### Exercise 7:
+```javascript
+function alphabetSoup(str) {
 
-Initially open[1..3] = { 0 , 0 , 0 }. Here is the state of open[1..3] after each click and corresponding count of open tweets.
+  return reduce(str, function(accum, currentEl){
 
-CLICK 1 : { 1, 0, 0 }, open count = 1
+    // for the first iteration
+    if (accum === "") {
+      return currentEl;
+    }
 
-CLICK 2 : { 1, 1, 0 }, open count = 2
+    for (var i = 0; i < accum.length; i++) {
+      if (currentEl < accum[i]) { // insert currentEl before accum[i]
+        accum = [accum.slice(0, i) + currentEl + accum.slice(i)].join("");
+        return accum;
+      }
+    }
 
-CLICK 3 : { 1, 1, 1 }, open count = 3
+    // if currentEl is > any letter in accum append it to the end of accum
+    return accum += currentEl;
 
-CLICK 2 : { 1, 0, 1 }, open count = 2
+  }, "");
 
-CLOSEALL : { 0, 0, 0 }, open count = 0
+}
 
-CLICK 1 : { 1, 0, 0 }, open count = 1
-
-#### Implementation:
-
-* Prompt the user for the number of tweets there will be and store it in `numberOfTweets`.
-
-* Prompt the user for the tweets they would like to click, or have them enter ‘o’ to open all of them or ‘c’ to close all of them (store these in an array called `postClicks`.
-
-* Create a `createEmptyArray` function that takes a number as input and returns an array of that size and enters ‘0’ for each value of the array.
-
-* Create an `allOpen` function that takes an array as a parameter and using ‘map’ (the function you created earlier) returns that array filled with the number 1. This is for when the user enters an 'o'.
-
-* Create an `allClosed` function that takes an array as a parameter and using ‘map’ (the function you created earlier) returns that array filled with the number 0. This is for when the user enters a 'c'.
-
-* Use your ‘each’ function (the function you created earlier) to iterate over your `postClicks` array that either opens/closes all the tweets or toggles specific tweets.
-
-* Create a function `getCount` that takes an array as a parameter and using `reduce` (the function you created earlier) returns the sum of the array. This is to find out how many tweets are open.
-
-* Log which tweets are open (in array format).
-
----
-
-### Exercise 7: Alphabet Soup
-Create a function `alphabetSoup(str)` that takes the `str` string parameter being passed and return the string with the letters in alphabetical order (ie. 'hello' becomes 'ehllo'). Because this isn't hard enough I want you to use _your_ reduce function inside your alphabetSoup function. Assume numbers and punctuation symbols will not be included in the string. Good luck.
+var soup = alphabetSoup("hello");
+console.log(soup); // ehllo
+```
