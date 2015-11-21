@@ -171,6 +171,29 @@ By definition, the first two numbers in the Fibonacci sequence are 0 and 1, and 
 
 Write a function that accepts a number and returns the number at that position in the fibonnaci sequence.
 
+#### Exercise 7: Zeller's Congruence
+
+Zeller's congruence is an algorithm developed by Christian Zeller to calculate the day ofthe week. The formula is:
+
+![zellers_congruence](resources/zellers_congruence.png)
+
+Where:
+
+h is the day of the week (0 = Saturday to 6 = Friday)
+
+q is the number of the month (1 to 31)
+
+m is the month number (1 = January to 12 = December)
+
+K is the year of the century (year mod 100)
+
+J is the century (year / 100) but **discard the remainder**
+
+Where square brackets are missing their 'tops' (in the formula) the **remainder must be discarded** (i.e. rounded down). 
+
+Write a function that takes a month, day, and year as arguments and returns the day of the week using Zeller's formula (not just the number). 
+How you implement your arguments/parameters is up to you.
+
 ## Extra Credit
 
 Use the sum, multiple, divide, and remainder functions you wrote earlier to create a "calculator" function. This function should accept three parameters. The first two parameters are the numbers on which to perform an operation, and the third parameter should be a string which specifies which mathematical operation to perform on the two numbers.
