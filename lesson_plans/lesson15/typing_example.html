@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+
+<body>
+  <label></label> <input type="text"></input>
+<script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+<script>
+$('input').on('keypress', function (e) {
+  $('label').text(e.keyCode);
+});
+
+$('body').on('keypress', function(e){
+  console.log(String.fromCharCode(e.keyCode));
+});
+</script
+</body>
+</html>

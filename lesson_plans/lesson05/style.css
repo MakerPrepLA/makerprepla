@@ -1,0 +1,14 @@
+#greeting {
+  background-image:url("https://newevolutiondesigns.com/images/freebies/colorful-background-1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+
+p {
+  margin-top: 30px;
+}
+
+.lead {
+  text-align: center;
+}

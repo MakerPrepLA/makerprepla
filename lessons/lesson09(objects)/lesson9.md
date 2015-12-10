@@ -11,6 +11,9 @@ var person = {
   "name": "Mario",
   "job": "Plumber"
 };
+
+person["name"]; // "Mario"
+person["job"]; // "Plumber"
 ```
 
 ![person object](resources/object.png)
@@ -18,12 +21,7 @@ var person = {
 We can use the bracket syntax to access and set values
 
 ```javascript
-// access person's name & job property
-person["name"]; // "Mario"
-person["job"]; // "Plumber"
-
-// replace person's name property to 'Luigi'
-person["name"] = "Luigi";
+person['name'] = 'Luigi';
 ```
 
 ![person object](resources/object2.png)

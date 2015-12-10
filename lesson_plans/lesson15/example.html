@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+
+<body>
+  <button>Beeper</button>
+  <button>Beeper 2</button>
+  <button>Beerper 3</button>
+  <div></div>
+<script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+<script>
+$('button').on('click', function(event) {
+  alert('Beep!');
+  $(this).slideUp();
+});
+
+console.log('Look! My programm finished executing, we didnt have to wait until the user was done clicking!');
+</script>
+</body>
+</html>

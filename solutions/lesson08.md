@@ -2,7 +2,7 @@
 
 ### Count by Twos
 
-```javascript
+```
 var count = 0;
 var countTo = 50;
 
@@ -29,7 +29,7 @@ while(count <= countTo){
 
 ### Fencepost Loop
 
-```html
+```
 <html>
   <head>  
     <style>
@@ -67,9 +67,10 @@ while(count <= countTo){
 ```
 
 ## Exercise 3
-### Cumulative Sum
 
-```html
+### Cumulative Sum
+```
+<style>
 <html>
   <head>
   </head>
@@ -95,9 +96,10 @@ while(count <= countTo){
 </html>
 ```
 
-## Exercise 4: FizzBuzz
+## Exercise 4
 
-```javascript
+### FizzBuzz
+```
 var countNum = 1;
 var maxNum = 100;
 
@@ -115,29 +117,45 @@ while(countNum <= maxNum){
 }
 ```
 
-## Exercise 5: Multiplication Table
-```javascript
-var i = 1;
-var j = 1;
-var stop = 12;
-var line = "";
+## Exercise 5
 
-while(i <= stop) {
-  while(j <= stop) { // 1
-    line += (i * j) + " ";
-    j++;
+### Number Introduction
+**Note:** adding a number to a string automatically converst the number into a string.  to avoid this, encase the number in parentheses.
+```
+var guestNum = 1;
+var presentNum;
+var n = 10;
+var message = "";
+
+while(guestNum < n){
+
+  message += "welcome " + (guestNum) + "";
+
+  if(guestNum > 1) {
+    message += ", meet";
+
+    presentNum = 1;
+
+    while(presentNum < guestNum){
+      if(presentNum > 1){
+        if(presentNum == guestNum-1){
+          message += " and";
+        } else {
+          message += ",";
+        }
+      }
+      message += " " + (presentNum);
+      presentNum++;
+    }
   }
-  console.log(line);
-  line = "";
-  j = 1;
-  i++;
+  console.log(message);
+  message = "";
+  guestNum++;
 }
 ```
-
 ## Exercise 7
 ### Valid Integer
-
-```javascript
+```
 var userInput = parseInt(prompt("gimme a number greater than zero."));
 
 while (userInput === 0) {
@@ -148,8 +166,7 @@ alert("good job!");
 ```
 ## Exercise 8
 ### Rock, Paper, Scissors
-
-```javascript
+```
 var userChoice;
 var compChoice;
 var isRunning = true;
@@ -211,7 +228,6 @@ while (isRunning) {
 }
 
 ```
-
 ## Exercise 9
 ### Guessing Game
 ```
@@ -288,39 +304,4 @@ while(currentBalance < targetBalance){
 }
 
 alert("it will take " + years + " years to grow from $" + startBalance + " to $" + targetBalance + " with a " + (interestRate * 100) + "% interest rate.  your total balance will be " + currentBalance.toFixed(2));
-```
-
-## Nightmare Mode: Number Introduction
-**Note:** adding a number to a string automatically converts the number into a string.  to avoid this, encase the number in parentheses.
-```
-var guestNum = 1;
-var presentNum;
-var n = 10;
-var message = "";
-
-while(guestNum < n){
-
-  message += "welcome " + (guestNum) + "";
-
-  if(guestNum > 1) {
-    message += ", meet";
-
-    presentNum = 1;
-
-    while(presentNum < guestNum){
-      if(presentNum > 1){
-        if(presentNum == guestNum-1){
-          message += " and";
-        } else {
-          message += ",";
-        }
-      }
-      message += " " + (presentNum);
-      presentNum++;
-    }
-  }
-  console.log(message);
-  message = "";
-  guestNum++;
-}
 ```

@@ -103,7 +103,7 @@ var n = 5;
 var j;
 
 while ( i < n ) {
-  j = 0; // What happens if we remove this line?
+  j = 0 // What happens if we remove this line?
   while ( j < n ) {
     console.log("i is", i, "and j is", j);
     j++;
@@ -112,25 +112,27 @@ while ( i < n ) {
 }
 ```
 
-#### Exercise 5: Multiplication table
+#### Exercise 5: Number Introduction
 
-Using nested while loops print a multiplication table from 1 to 12.
-The output should look something like this:
-```javascript
-"1 2 3 4 5 6 7 8 9 10 11 12 "
-"2 4 6 8 10 12 14 16 18 20 22 24 "
-"3 6 9 12 15 18 21 24 27 30 33 36 "
-"4 8 12 16 20 24 28 32 36 40 44 48 "
-"5 10 15 20 25 30 35 40 45 50 55 60 "
-"6 12 18 24 30 36 42 48 54 60 66 72 "
-"7 14 21 28 35 42 49 56 63 70 77 84 "
-"8 16 24 32 40 48 56 64 72 80 88 96 "
-"9 18 27 36 45 54 63 72 81 90 99 108 "
-"10 20 30 40 50 60 70 80 90 100 110 120 "
-"11 22 33 44 55 66 77 88 99 110 121 132 "
-"12 24 36 48 60 72 84 96 108 120 132 144 "
-```
-Extra credit: Format your table so that the columns line up & there is no trailing space(s) at the end.
+`n` numbers are coming to a number party. Introduce them each to all the guests as they arrive. You should end up with output looking something like this one for `n = 5`:
+
+"welcome 1"
+
+"welcome 2, meet 1"
+
+"welcome 3, meet 1 and 2"
+
+"welcome 4, meet 1, 2 and 3"
+
+"welcome 5, meet 1, 2, 3 and 4"
+
+If its getting late, don't spend too much time worrying about how to format the strings properly. The key takeaway from this excercise is getting two nested while loops to work. If you're able to print something along the lines of:
+
+1. 1
+2. 2,1
+3. 3,1,2
+4. 4,1,2,3
+5. 5,1,2,3,4
 
 ## The **Math** object (Don't worry if you don't make it through all of this section)
 
@@ -230,25 +232,3 @@ while (j < 100) {
   }
 }
 ```
-
-## Nightmare Mode: Number Introduction
-
-`n` numbers are coming to a number party. Introduce them each to all the guests as they arrive. You should end up with output looking something like this one for `n = 5`:
-
-"welcome 1"
-
-"welcome 2, meet 1"
-
-"welcome 3, meet 1 and 2"
-
-"welcome 4, meet 1, 2 and 3"
-
-"welcome 5, meet 1, 2, 3 and 4"
-
-If its getting late, don't spend too much time worrying about how to format the strings properly. The key takeaway from this excercise is getting two nested while loops to work. If you're able to print something along the lines of:
-
-1. 1
-2. 2,1
-3. 3,1,2
-4. 4,1,2,3
-5. 5,1,2,3,4
