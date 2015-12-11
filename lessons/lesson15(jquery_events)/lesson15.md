@@ -83,9 +83,9 @@ $('#target').on('mouseleave', function(){
 ```javascript
 var mouse_tracker = function(event){
   console.log(event.pageX, event.pageY, !!event.which)
-});
+};
 
-$('body').on('mousemove', mouse_tracker);
+$(document).on('mousemove', mouse_tracker);
 ```
 
 Using the code above as inspiration, try and answer the questions / perform the tasks listed below:
