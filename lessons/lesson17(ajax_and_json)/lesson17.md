@@ -4,7 +4,7 @@
 
 Ajax is a means of interacting with servers behind the scenes using JavaScript without having to reload the page. This allows you to create complex interactive web apps that behave like desktop apps. One famous example is Gmail, which allows you to read, write, and receive emails, all without the need for refreshing the page.
 
-Visit the following URL in your browser: `http://api.openweathermap.org/data/2.5/weather?q=San%20Francisco&mode=json&units=imperial`
+Visit the following URL in your browser: `http://api.openweathermap.org/data/2.5/weather?q=LosAngeles,us&appid=e42d32af9555a899db7106b67e9e5aa`
 
 What does the %20 represent in the [query string](//en.wikipedia.org/wiki/Query_string)?
 
@@ -31,7 +31,7 @@ The most common thing to do with data returned from an AJAX request is show it t
 ```javascript
 $.ajax({
   method: 'GET',
-  url: 'http://api.openweathermap.org/data/2.5/weather?q=San%20Francisco&mode=json&units=imperial',
+  url: 'http://api.openweathermap.org/data/2.5/weather?q=LosAngeles,us&appid=e42d32af9555a899db7106b67e9e5aa',
   success: function(weather_data){
     $('#container').append(weather_data.main.temp)
   }
@@ -45,12 +45,12 @@ var to_be_run_on_server_response = function(weather_data){
 
 $.ajax({
   method: 'GET',
-  url: 'http://api.openweathermap.org/data/2.5/weather?q=San%20Francisco&mode=json&units=imperial',
+  url: 'http://api.openweathermap.org/data/2.5/weather?q=LosAngeles,us&appid=e42d32af9555a899db7106b67e9e5aa',
   success: to_be_run_on_server_response;
 });
 ```
 
-#### Exercise 1: 
+#### Exercise 1:
 
 Create a simple weather page that shows the following data.
 
