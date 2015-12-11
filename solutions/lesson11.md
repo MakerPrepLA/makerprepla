@@ -300,7 +300,7 @@ console.log(arrayMath([4, 2, 3], "%")); // 4 % 2 % 3 = 0
 // 6.  Write a `zipper` function that combines two arrays in alternating order, `zipper([1,2,3],['a','b','c'])` should return `[1, 'a', 2, 'b', 3, 'c']`. Make sure to handle cases where one array is longer than the other.
 function zipper(arr1, arr2) {
   var zippedArray = [];
-  var larger = arr1.length > arr2.length ? arr1.length : arr2.length;
+  var larger = arr1 > arr2 ? arr1.length : arr2.length;
   for (var i = 0; i < larger; i++) {
     if (arr1[i]) { // checks if value is "truthy"
     zippedArray.push(arr1[i]);

@@ -35,7 +35,7 @@ ___
 
 ~~Surrounding text with tildes (squigglies) renders it with a strikethrough.~~
 
-Sometimes you want to embed some *stylized text* right into **your paragraph.** Pretty cool, right!
+Sometimes you want to embed some \*stylized text\* right into **your paragraph.** Pretty cool, right!
 
 ## Lists
 

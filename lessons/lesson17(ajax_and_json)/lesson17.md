@@ -1,5 +1,7 @@
 # Lesson 17: AJAX & JSON
 
+![](resources/ajax.png)
+
 Ajax is a means of interacting with servers behind the scenes using JavaScript without having to reload the page. This allows you to create complex interactive web apps that behave like desktop apps. One famous example is Gmail, which allows you to read, write, and receive emails, all without the need for refreshing the page.
 
 Visit the following URL in your browser: `http://api.openweathermap.org/data/2.5/weather?q=San%20Francisco&mode=json&units=imperial`
@@ -13,7 +15,7 @@ Create an empty HTML document, include the JQuery library (look at one of the pr
 ```javascript
 $.ajax({
   method: 'GET',
-  url: 'http://api.openweathermap.org/data/2.5/weather?q=San%20Francisco&mode=json&units=imperial',
+  url: 'http://api.openweathermap.org/data/2.5/weather?q=LosAngeles,us&appid=e42d32af9555a899db7106b67e9e5aae',
   success: function(weather_data){
     console.log(weather_data)
   }
@@ -22,7 +24,7 @@ $.ajax({
 
 Open your Network tab and refresh the page to perform the AJAX request again to see the network request and response in action.
 
-![](resources/ajax.png)
+![](resources/ajax_query.png)
 
 The most common thing to do with data returned from an AJAX request is show it to the user. We can use jQuery to do this, but only in the callback function `to_be_run_on_server_response`. If we try to use the `weather_data` outside that function, we won't have the response from the server yet.
 
