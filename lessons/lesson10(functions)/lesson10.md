@@ -191,6 +191,8 @@ J is the century (year / 100) but **discard the remainder**
 
 Where square brackets are missing their 'tops' (in the formula) the **remainder must be discarded** (i.e. rounded down). 
 
+PLEASE NOTE: In this formula, January and February are special. January refers to the 13th month of the previous year, and February refers to the 14th month of the previous year. For example, January 22, 1995 would equal 13/22/1994, and February 15, 2017 would equal 14/15/2016. Other months are treated normally, so December 13, 1989 would be 12/13/1989.
+
 Write a function that takes a month, day, and year as arguments and returns the day of the week using Zeller's formula (not just the number). 
 How you implement your arguments/parameters is up to you.
 
