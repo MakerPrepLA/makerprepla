@@ -48,7 +48,7 @@
 ### Getting Started with Git (type these commands into your terminal)
 * Install Git for the first time
 ```
-git
+http://git-scm.com/download
 ```
 * Configure your environments so your git commits have your name/email
 ```
