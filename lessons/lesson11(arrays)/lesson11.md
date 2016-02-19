@@ -285,7 +285,7 @@ var rand = Math.floor( Math.random() * words.length)
 3.  Write a function that takes an array and returns a new array containing only the values at odd indexes in that array.
 4.  Write a function called `sumArray` that takes an array of numbers and returns the sum of all of those numbers added together.
 5.  Write a function called `arrayMath` that takes an array of numbers and a string with a mathmatical operator and applies that operator to all the numbers together. `arrayMath([4,2,3], "*")` should return `24`
-6.  Write a `zipper` function that combines two arrays in alternating order, `zipper([1,2,3],['a','b','c'])` should return `[1, 'a', 2, 'b', 3, 'c']`. Make sure to handle cases where one array is longer than the other.
+6.  Write a `zipper` function that combines two arrays in order, alternating between arrays as you progress. `zipper([1,2,3],['a','b','c'])` should return `[1, 'a', 2, 'b', 3, 'c']`. Make sure to handle cases where one array is longer than the other.
 7.  Write a function that merges two sorted lists into a new list. `mergeSorted([1, 2, 5, 9], [3, 7, 19])` should return `[1, 2, 3, 5, 7, 9, 19]`
 8. Create a function `shuffler` that takes an array as input and returns a new array of the same elements, but in a random order. **How will you keep track of which elements have already been put into the new array? An object map come in handy...**
 
