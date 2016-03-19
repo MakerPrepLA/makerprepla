@@ -133,7 +133,7 @@ var prop = 'year';
 
 #### Exercise 4:
 
-On lines ending '??', figure out what the expression will evaluate to. **First form a hypthosis**, then **try it in the console**.
+On lines ending '??', figure out what the expression will evaluate to. **First form a hypothesis**, then **try it in the console**.
 
 ```javascript
 var demo_object = {
