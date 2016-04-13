@@ -4,7 +4,7 @@
 
 Ajax is a means of interacting with servers behind the scenes using JavaScript without having to reload the page. This allows you to create complex interactive web apps that behave like desktop apps. One famous example is Gmail, which allows you to read, write, and receive emails, all without the need for refreshing the page.
 
-Visit the following URL in your browser: `http://api.openweathermap.org/data/2.5/weather?q=LosAngeles,us&appid=e42d32af9555a899db7106b67e9e5aa`
+Visit the following URL in your browser: `http://api.openweathermap.org/data/2.5/weather?q=LosAngeles,us&appid=e42d32af9555a899db7106b67e9e5aae`
 
 What does the %20 represent in the [query string](//en.wikipedia.org/wiki/Query_string)?
 
